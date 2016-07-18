@@ -1,0 +1,140 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf340
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 LucidaGrande;\f2\fmodern\fcharset0 Courier;
+\f3\fmodern\fcharset0 Courier-Bold;}
+{\colortbl;\red255\green255\blue255;\red100\green14\blue47;\red110\green5\blue0;\red244\green246\blue252;
+}
+\paperw11900\paperh16840\margl1440\margr1440\vieww29340\viewh9920\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b\fs48 \cf0 \expnd0\expndtw0\kerning0
+before you \cf2 start \cf0 \
+important you must change the timezone in \
+updateweatherstation.php \
+if you are using the WS1001 clone version\
+
+\b0\fs28 // change the timezone to zone i.e Europe/London \
+date_default_timezone_set('
+\b Europe/Istanbul
+\b0 ');
+\b\fs48 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardeftab720\pardirnatural\partightenfactor0
+
+\f0\b0\fs24 \cf0 \kerning1\expnd0\expndtw0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b\fs48 \cf0 \expnd0\expndtw0\kerning0
+\
+\
+please install template into pws folder not weatherstation folder .\
+\
+http://somethingdot.com/pws/ws1001.php would be the final url.\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b0\fs24 \cf0 \kerning1\expnd0\expndtw0 \
+\
+pws WS1001 CLONES LIVE DATA home station setup 30th May 2016\
+\
+once you have extracted the personalised station zip file \
+\
+create a folder on your server called pws\
+upload the extracted zip file contents to the folder pws on your server \
+\
+\
+DATA SOURCE /UNITS/TIMEZONE/WU STATION ID /API KEY\
+\
+complete your your details to the settings.php file everything is driven and used by this \
+\
+\
+it will look like this .\
+\
+<?php\
+### HOME WEATHER STATION TEMPLATE SETUP please set up and check thoroughly all \
+### settings incorrect settings will show incorrect data (updated Saturday 1st April 2016) ####\
+\
+$TZ= 'Europe/Istanbul'; // important set your time zone America/New_York for example go here to find your http://php.net/manual/en/timezones.php\
+$TZconf = 'Europe/Istanbul';  // Your timezone for charts data \
+$UTC = '-4';  // NUMBER of hours betweeen your location and UTC ,EXAMPLE new york -4 london 0 istanbul 3 \
+$api= 'xxxxxxxxxxx'; // important Weather Underground api key developer key '1234567890'\
+$stationName = 'Sinanoba Istanbul'; // This can be also changed for each language in translation files.\
+$stationlocation = 'Istanbul'; // add your relative location city,town,village,district, or region \
+$WUID = 'ISTANBUL161'; // YOUR Weather Underground station ID this is used for charts\
+$id   = 'ISTANBUL161'; // YOUR Weather Underground station ID this is used for forecast\
+$lat  = '41.000736'; // you can use google maps to determine your lat\
+$lon  = '28.542501'; // you can use google maps to determine your lon\
+$elevation   = '45.041m'; //add your elevation  ft or metres eg ..45.041m or 133ft\
+$dataSource = 'wunderground'; // 'wunderground' = weather underground server ; \
+$metric = true; // true for metric units, false for imperial units\
+$unitsLnk= 'metric'; // metric or english for non metric\
+$templateunit ='&deg;c'; // template temperatures units &deg;c or &deg;f\
+$indoorunit ='Celsius'; // template temperatures units Celsius or Fahrenheit\
+$windmu = 'kts'; // 'm/s' or 'km/h or mph' or kts for units selection\
+$windunit = 'KNOTS'; // template wind unit KMH,MPH,M/S,KNOTS\
+$rainunit = 'mm'; // template rain unit mm or in\
+$pressureunit = 'mb'; // template pressure unit mb or in\
+$livedata           = 'ws1001.json'; // path to raw data\
+$version            = 'Realtime'; // type of source// \
+$hardware           = 'Fine Offset (HP2000)'; // hardware type i.e Davis VP2,Ambient,Accurite,Fine Offset,Aercus etc// \
+$email              = 'youremail@com'; // contact email for form\
+$twitter            = '@yourtwitter'; // twitter username used on form if available\
+\
+// please note there is no requirement to edit below this line unless you really know what your doing //\
+\
+\
+Cron jobs (i\cf3 mportant without cron jobs running the template will always use sample data provided in zip file and produce uptodate forecast data\cf0 )\
+\
+1.there  is 3
+\fs28  
+\fs24 cron files in this version and all data is now moved to its own folder called jsodata and cron files are now located in cronfiles folder so please update your cron structure 
+\f2\fs28 \cb4 \expnd0\expndtw0\kerning0
+pws/
+\f3\b cronfiles
+\f2\b0 /stationcron.php
+\f0\fs24 \cb1 \kerning1\expnd0\expndtw0 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs28 \cf0 \expnd0\expndtw0\kerning0
+run these  in  using  
+\f3\b \cb4 php -q /home/xxxxxx/public_html/pws/cronfiles/stationcron.php
+\f2\b0 \
+
+\f1 \cb1 xxxx is your home directory on your server\
+\
+
+\b stationcron.php
+\b0  
+\f0 \'a0
+\f1 for current sky 
+\f0  data run every 6-10 minutes or preferred \
+
+\f1\b forecastcron.php
+\b0  
+\f0 \'a0
+\f1 for daily and forecast 
+\f0 run every 60 minutes or preferred period \
+chartcron.php for recording TREND DATA\
+\
+
+\f1 \
+once it is on your server and running the cron jobs you can view the weather station template\
+your url  
+\b /pws/
+\f0\b0 \kerning1\expnd0\expndtw0 WS1001.php 
+\f1 \expnd0\expndtw0\kerning0
+ \
+\
+\
+ws1001 folder = metric \
+ws1001f folder = non metric\
+ws1001uk folder = UK version with mph wind speed\
+denmarkversion= Denmark version with m/s wind speed\
+knots version = Used for those wanting windspeed in KNOTS displayed\
+\
+\
+\
+\
+}

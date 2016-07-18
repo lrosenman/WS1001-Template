@@ -1,0 +1,27 @@
+{"type":"FeatureCollection","metadata":{"totalCount":22189},"features":[{
+  "geometry": {
+    "type": "Point", 
+    "coordinates": [
+      129.37, 
+      -8.26, 
+      -40.0
+    ]
+  }, 
+  "type": "Feature", 
+  "id": "20160718_0000031", 
+  "properties": {
+    "lastupdate": "2016-07-18T07:28:00.0Z", 
+    "magtype": "mb", 
+    "evtype": "ke", 
+    "lon": 129.37, 
+    "auth": "EMSC", 
+    "lat": -8.26, 
+    "depth": 40.0, 
+    "unid": "20160718_0000031", 
+    "mag": 5.1, 
+    "time": "2016-07-18T05:32:01.0Z", 
+    "source_id": "518844", 
+    "source_catalog": "EMSC-RTS", 
+    "flynn_region": "KEPULAUAN BABAR, INDONESIA"
+  }
+}]}

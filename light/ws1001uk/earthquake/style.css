@@ -1,0 +1,214 @@
+/*
+****** earthquake (deprem) modal css layout created by brian underdown for home weather simplicity template ******
+****** modification to this IS at your own risk . it is important to understand how to use ******
+****** created Saturday 31st October 2015 ******
+****** Home Weather Station Template Simplicity by brian underdown is licensed under a ******
+****** Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License. ******
+*/
+@font-face {
+    font-family:'weathertext';
+    src: url('../css/fonts/weathertext.eot');
+    src: url('../css/fonts/weathertext.eot?#iefix') format('embedded-opentype'),
+         url('../css/fonts/weathertext.woff2') format('woff2'),
+         url('../css/fonts/weathertext.woff') format('woff'),
+         url('../css/fonts/weathertext.ttf') format('truetype'),
+         url('../css/fonts/weathertext.svg#weathertext') format('svg');
+    font-weight: normal;
+    font-style: normal;}
+
+.body {
+	
+	background:none;
+	
+	padding:0px;
+	
+	width:505px;
+		font-family:helvetica;
+		
+		display:inline-block;
+	margin-left:0px;
+	height:345px;
+	overflow:hidden;
+	margin-top:10px;
+	 border-right: 1px solid rgba(233, 235, 241, 1);
+	  border-left: 1px solid rgba(233, 235, 241, 1);
+	   border-top: 1px solid rgba(233, 235, 241, 1);
+	    border-bottom: 1px solid rgba(233, 235, 241, 1);	
+		margin-left:45px;padding:5px;	
+		
+-webkit-border-radius:4px;
+-moz-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+font-family: Helvetica Neue,Helvetica,Arial,sans-serif; 
+		 }
+	  
+a {
+	
+	color:#5f6061 !important;text-transform:none;
+	text-decoration:none;font-family: Helvetica Neue,Helvetica,Arial,sans-serif; }
+
+
+
+.regiontitle
+{
+	color:#5f6061; display:block;margin-bottom:-5px;margin-left:45px;margin-top:5px;
+	background:#fff;	
+	font-family: Helvetica Neue,Helvetica,Arial,sans-serif; font-size:1em;
+
+	width:508px;	  
+	height:20px;
+	padding:5px;
+	-webkit-border-radius: 4px;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+border-radius: 4px;
+ border-right: 1px solid rgba(233, 235, 241, 1);
+	  border-left: 1px solid rgba(233, 235, 241, 1);
+	   border-top: 1px solid rgba(233, 235, 241, 1);
+	    border-bottom: 1px solid rgba(233, 235, 241, 1);	
+	
+	text-align:center;
+	
+}
+.regiontitle span {
+	color:#f26c4f; 	
+	font-family: Helvetica Neue,Helvetica,Arial,sans-serif; }
+
+.magnitude{
+	color:#5f6061; display:block;margin-bottom:0;margin-left:25px;margin-top:5px;
+	background:none;
+	border-radius:4px;
+	width:80%;
+	height:100px;
+	padding:5px;
+    background-position: left 240px top 5px;
+    background-repeat: no-repeat !important;
+	font-family: Helvetica Neue,Helvetica,Arial,sans-serif; 
+
+}
+
+.magnitudetitle{
+	color:#5f6061;
+	font-size:9px;
+	margin-left:60px;margin-top:60px;
+	position:absolute;font-family: Helvetica Neue,Helvetica,Arial,sans-serif; }
+
+
+
+
+
+
+.mag{
+	color: #5f6061!important;
+   
+    border-radius:50%;
+    height: 35px;
+    width: 35px;
+	padding:20px;
+    padding-top: 18px;
+    float: left;
+    background: white;
+    border: 5px solid rgba(233, 235, 241, 1);
+    font-size:26px;
+	margin-bottom:0px;margin-left:10px;
+	font-family: Helvetica Neue,Helvetica,Arial,sans-serif; 
+
+   
+   
+   
+}
+
+ .mag .content {float: left;
+    line-height: 1;
+    margin-top: 0em;
+    padding-top: 20%;
+    text-align: center;
+    width: 100%;
+   font-family: Helvetica Neue,Helvetica,Arial,sans-serif; 
+
+    -webkit-font-smoothing: antialiased!important;
+    font-size: 0.8em;
+    z-index: 99999;
+   	margin-left:15px;
+	}
+	
+	
+	
+	
+
+.place{
+	position:absolute;
+	 color: #5f6061;
+    font-size: 12px;
+    font-weight: 600;
+    width: 200px;
+    margin-left: 160px;
+    margin-top: 20px;
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif; text-align:center;
+	
+}
+
+.place span{
+	
+	 color: #f26c4f;
+	 font-weight:normal;
+	 font-size:12px;
+	 font-weight:600;font-family: Helvetica Neue,Helvetica,Arial,sans-serif; }
+.earthquakefooter
+{
+	color:#5f6061; display:block;margin-bottom:25px;margin-left:-14px;margin-top:5px;
+	background:none;
+	
+	font-family: Helvetica Neue,Helvetica,Arial,sans-serif; width:525px;	  
+	height:37px;
+	padding:5px;
+	-webkit-border-bottom-left-radius: 4px;
+-webkit-border-bottom-right-radius: 4px;
+-moz-border-radius-bottomleft: 4px;
+-moz-border-radius-bottomright: 4px;
+border-bottom-left-radius: 4px;
+border-bottom-right-radius: 4px;
+	font-size:0.7em;
+	position:absolute;
+	text-align:center;
+	text-transform:none;
+	text-decoration:none;
+	text-align:center;
+	border-right: 0px solid rgba(233, 235, 241, 1);
+	  border-left: 0px solid rgba(233, 235, 241, 1);
+	   border-top: 0px solid rgba(233, 235, 241, 1);
+	    border-bottom: 0px solid rgba(233, 235, 241, 1);	
+	
+
+}
+
+
+.earthquakefooter span
+{
+	color:#5f6061; 
+	font-size:0.9em;
+	font-family: Helvetica Neue,Helvetica,Arial,sans-serif; text-align:center;
+	text-transform:none;
+	text-decoration:none;
+	
+	
+	
+	
+
+}
+.earthquakefooter .a
+{
+	color:#5f6061; 
+	font-size:0.9em;
+	font-family: Helvetica Neue,Helvetica,Arial,sans-serif; text-align:center;
+	text-transform:none;
+	text-decoration:none;
+	
+	
+	
+	
+
+}

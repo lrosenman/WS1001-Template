@@ -1,0 +1,146 @@
+/* forecast 10 day css*/
+
+.body {
+	margin:0 auto;
+	text-align:center;
+	background-color: #3d3d3d;
+	color:#ccc;
+}
+
+
+
+
+.titleforecast {
+	
+	 font-size:0.9em;
+	 font-family:' Helvetica', Arial;
+	 margin-left:2%;
+	color:#ccc;
+	
+}
+
+
+#wuforecasts {
+  max-width: 700px;
+  margin-left: 1px;
+  margin-right: 0;    
+  font-family:' Helvetica', Arial;
+  border-radius:5px;
+  margin:5px; 
+  line-height:10px;
+  background-color: #3d3d3d;
+  color:#ccc;
+ }
+  
+#wuforecast {
+  float: left;
+  display: block;
+  margin-right: 0%;
+  width: 16%;
+  border-radius:4px;
+   margin:2px;
+ font-family:' Helvetica', Arial; 
+  margin-left:1px;
+  height:145px;padding:5px; 
+background-color: #3d3d3d;
+border:1px solid rgba(153,155,156,0.3);
+color:#ccc;
+   
+}
+#wuforecasthour {
+  display:block;
+  width: 195px;
+  border-radius:4px;
+ color:#ccc;
+  margin:5px;
+ font-family:' Helvetica', Arial; 
+  float:left;
+  height:45px;padding:5px; 
+  background-color: #3d3d3d;
+   border:1px solid rgba(153,155,156,0.5);
+   line-height:11px;
+   
+}
+
+#wuforecasthour:first-child {
+   
+  border:1px solid rgba(153,155,156,0.5);
+    padding: 5px;
+    border-radius: 4px;
+   background-color: #3d3d3d;
+    margin:5px;
+    font-family: 'Helvetica', Arial;color:#ccc;
+}
+
+
+#wuforecasthour:last-child {
+    margin-right: 0;
+    border:1px solid rgba(153,155,156,0.5);
+    padding: 5px;
+    border-radius: 4px;
+    background-color: #3d3d3d;
+    margin:5px;
+    font-family: 'Helvetica', Arial;color:#ccc;
+}
+wuforecasthour:nth-child(2n) {
+   
+   border:1px solid rgba(153,155,156,0.5);
+    padding: 5px;
+    border-radius: 4px;
+    background-color: #3d3d3d;
+   margin:5px;
+    font-family: 'Helvetica', Arial;
+}
+#wuforecasthour:nth-child(4n) {
+   
+    border:1px solid rgba(153,155,156,0.5);
+    padding: 5px;
+    border-radius: 4px;
+    background-color: #3d3d3d;
+   margin:5px;
+    font-family: 'Helvetica', Arial;font-size:12px;
+}
+#wuforecasthour:nth-child(4n+1) {
+   border:1px solid rgba(153,155,156,0.5);
+    padding: 5px;
+    border-radius: 4px;
+    background-color: #3d3d3d;
+   font-family: 'Helvetica', Arial;
+  margin:5px;
+} 
+	
+  #wuforecast:hover {
+    background-color:none; }
+    #wuforecast:hover #weekday {
+      background-color:none; }
+
+#weekday {
+  margin: 0;
+ background-color: #3d3d3d;
+  text-align: center;
+  padding: 5px;
+  color:#ccc; 
+  font-family:Helvetica, Arial; 
+  text-transform:uppercase;
+  font-size:12px;
+  }
+
+#temp {
+  font-size:12px;
+  color: #f26c4f !important;font-family:Helvetica, Arial; 
+  
+  }
+#temp2 {
+  font-size:12px;
+  color:#ccc;font-family:Helvetica, Arial; }
+
+#icon {
+  width:46%;
+  float: none;
+  padding: 2px;
+  margin: 0px; 
+  margin-left:25%;
+  
+  margin-top:-3px;
+  }
+ 

@@ -1,0 +1,92 @@
+ul li {
+  font-size: 13px;
+  margin-bottom: 5px;
+  line-height: 1.1em;  display:none;
+}
+ul {
+  padding: 0px 20px 0px;
+  margin: 0px;  display:none;
+}
+#info-icon {
+  cursor:help;
+  position:absolute;
+  top: 5px;
+  right:97px;
+  z-index:50;
+  display:none;
+}
+
+body {
+  padding: 1px 1px;
+  font-size: 12px;
+  margin-top:-10px;
+  margin-left:0;
+  float:left; color: #4e5a69;border: 0 none;
+}
+ 
+img {border:0px none;}
+a, a:link  {text-decoration:none; font-weight: bold; color:#2B659B;  display:none;}
+a:visited {color: #2B659B;  display:none;}
+a:hover {color:gray;  display:none;}  
+#window {
+  background:none;
+/*  behavior: url(./css/ie-css3.htc);  FOR IE, BUT Slow performance in IE
+  background: #fff; *//* must be set for IE CSS3 */
+  padding:5px ;
+  margin:0; color: #4e5a69;border: 0 none;
+}
+table {margin:0; padding:0; border: 0 none; color: #4e5a69;}
+
+/* for windowed mode */
+#WUGcInfo {font: 70%/1.3em Helvetica; }
+.c-lside a {
+  font-weight: normal;
+  text-decoration: none;
+  color: #4e5a69;margin-top:5px;border: 0 none;
+}
+.c-rside a {
+  color: #4e5a69;  display:none;
+}
+#refresh-button {
+  position:absolute; top: 4px; right:50px; z-index:50;  display:none;
+}
+#WUG-error {
+  text-align:center; color:red;  display:none;
+}
+
+/* moved from inline */
+#window {
+border:0px solid gray; margin:0px auto; margin-left:0px;color:#4e5a69;font-family:'Helvetica' Helvetica; color: #4e5a69;
+}
+#inner {
+margin-top:0px;color:#4e5a69;font-family:'Helvetica' Helvetica;border: 0 none;
+}
+#container {
+margin:0px auto;color:#4e5a69;font-family:'Helvetica' Helvetica;border: 0 none;
+}
+#gbuttons {
+text-align:right; position:absolute; right: 5px; top: 5px;  display:none;
+}
+#graph-switch {
+position:absolute; top: 15px; left: 15px;  display:none;
+}
+#GraphTime {
+margin-left:10px; color: #4e5a69;border: 0 none;
+}
+#resize {
+margin:0px auto; padding: 6px; border:1px solid lightgrey;  display:none;
+}
+#size-switch {
+text-align: left;  display:none;
+}
+#new-window {
+position:absolute; top:5px; right:0px; z-index:50;  display:none;
+}
+.selectDate {
+text-align:center; margin-top: -20px;  display:none;
+}
+
+/* improve style for highcharts 2.0 */
+.highcharts-tooltip {
+  line-height: 1.5em; color: #4e5a69;
+}

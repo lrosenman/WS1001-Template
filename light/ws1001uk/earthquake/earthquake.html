@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Istanbul Regional Earthquakes (deprem)</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+    <link href="../font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<script src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/combi.js"></script>	
+	
+	<script type="text/javascript">
+		$(document).ready(function(){			
+			var template = $('#entry-template').html();
+			var renderer = Handlebars.compile(template);
+			var quake ="../jsondata/eq3.json";
+			$.getJSON(quake, function( json ) {
+				var result = renderer (json);
+				$('#deprem').html(result);
+			});	});
+	</script>
+</head>
+<body style="margin-left:30px;">
+       <div class="regiontitle"><i class="fa fa-map-marker "></i> World Wide<span> Significant</span> Earthquakes </div>
+	<div id="deprem"></div></body>
+<script id="entry-template" type="text/x-handlebars-template">
+		<div class="body">
+					{{#each features}}
+					<div class="place"><i class="fa fa-map-marker "></i>
+					{{properties.flynn_region}}<br>
+					<span>
+					{{datetime properties.time}}	<br>
+					<i class="fa fa-map-marker "></i> <span style="font-size:11px;color:#777;">Lat:
+					{{properties.lat}}&deg;- Lon: {{properties.lon}}&deg;	</span>
+					</div>
+					<div class="magnitudetitle">Magnitude </div>
+					<div class="magnitude">
+					<span class ="mag">
+					{{properties.mag}}
+					</span>	
+					</div>
+					{{/each}}
+					<div class="earthquakefooter"><span>
+					<a href="http://www.emsc-csem.org/Earthquake/" title="data provided by EMSC" target="_blank">data provided by EMSC &copy;</a><br>
+					<a href="http://www.idesign34.com/homepws/homeweather.html" target="_blank">HomeWeatherStation &copy;</a></span>
+					</div>
+				</div>
+			</center>
+		</div>
+	</script>
+</html>
+
