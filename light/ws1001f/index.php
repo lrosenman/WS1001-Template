@@ -56,7 +56,7 @@
       <li><a href="info/info.php" data-featherlight="iframe"><img src="img/info3.png" width="40px"> Contact Info</a></li>
       <li><a href="<?php echo "$weatherunderground \n";?>" target="_blank"><img src="img/wu.png" width="40px"> WU Station</a></li>
      <li><a href="moon.php" data-featherlight="iframe"><img src="img/moon.png" width="40px"> Sun/Moon Info</a></li>
-      <li><a href="http://www.idesign34.com/homepws/homeweather.html" target="_blank" ><img src="img/info.png" width="40px"> Template Info</a></li>
+      <li><a href="https://github.com/lrosenman/WS1001-Template/" target="_blank" ><img src="img/info.png" width="40px"> Template Info</a></li>
       <li><a href="login/login.html" data-featherlight="iframe"><img src="img/settings.png" width="40px"> Settings</a></li>
      <!--respect this line its not a lot to ask --->
       <span style="font-size:10px;margin-left:5px;background:#fff;border:none;color:#66a1ba;"><i class="fa fa-dot-circle-o fa-1x"> </i> <?php echo "$moonify \n";?></span>
@@ -350,7 +350,7 @@
          </div> 
         
        <!--- footer credits---><center>
-         <span style="margin-left:90px;"><a href="http://www.idesign34.com/homepws/homeweather.html" target="_blank" alt="idesign34 homeweather station" style="font-size:10px;color:#F26C4F;">&nbsp;&nbsp; HOME<strong>WEATHER</strong>STATION <span style="color:#66a1ba;">TEMPLATE</a>&nbsp;&nbsp;<span style="font-size:10px;"> |</span> <span style="font-size:10px;"> &nbsp; <a href="http://www.foshk.com/Weather_Professional/HP1000.htm" title="Fine Offset hardware" target="_blank"><?php echo "$templateversion \n";?></a> &copy; 2015-<?php echo date("Y") ?>&nbsp;&nbsp; |</span>
+         <span style="margin-left:90px;"><a href="https://github.com/lrosenman/WS1001-Template/" target="_blank" alt="idesign34 homeweather station" style="font-size:10px;color:#F26C4F;">&nbsp;&nbsp; HOME<strong>WEATHER</strong>STATION <span style="color:#66a1ba;">TEMPLATE</a>&nbsp;&nbsp;<span style="font-size:10px;"> |</span> <span style="font-size:10px;"> &nbsp; <a href="http://www.foshk.com/Weather_Professional/HP1000.htm" title="Fine Offset hardware" target="_blank"><?php echo "$templateversion \n";?></a> &copy; 2015-<?php echo date("Y") ?>&nbsp;&nbsp; |</span>
             <span style="color:#5f6061;font-weight:normal;font-size:10px;"> &nbsp;Built with <strong style="color:#66a1ba;"><a href="http://learnlayout.com/flexbox.html" title="http://learnlayout.com/flexbox.html" target="_blank">FLEX</a></strong> Webkit <?php echo "&copy; ${year}\n";?></span></span></div></center>
         
             
