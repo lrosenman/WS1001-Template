@@ -79,7 +79,7 @@ $colorpickerFontVal = "#000000";
 $CustomBgTheme = 'transparent';
 $colorpickerBgVal = "#ffffff";
 $baroMinMax = false;
-$templateinfo    = 'http://www.idesign34.com/homepws/homeweather.html'; // template information page
+$templateinfo    = 'https://github.com/lrosenman/WS1001-Template/'; // template information page
 $templateversion = 'Version 4.35 Fine Offset Hardware';
 ?>
 

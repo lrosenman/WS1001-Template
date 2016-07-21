@@ -224,7 +224,7 @@ foreach ($decoded['hourly_forecast'] as $value)
         </span>
     </div>
   </div> 
-  <a href="http://www.idesign34.com/homepws/homeweather.html" title="Home Weather Station Template info"><img src="../css/logos/graphlogo.png" style="padding:10px;float:right;margin-right:45px;"></a>
+  <a href="https://github.com/lrosenman/WS1001-Template/" title="Home Weather Station Template info"><img src="../css/logos/graphlogo.png" style="padding:10px;float:right;margin-right:45px;"></a>
   
     
 	</body>

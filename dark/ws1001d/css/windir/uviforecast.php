@@ -394,7 +394,7 @@ UV forecast courtesy & Copyright &copy; KNMI/ESA <a href="http://www.temis.nl" t
 	 
     </div>
     
-  </div> <a href="http://www.idesign34.com/homepws/homeweather.html" title="Home Weather Station Template info"><img src="css/logos/uvlogo.png" style="padding:5px;"></a><span style="font-size:11px;margin-left:10px;color:#5f6061;">UVINDEX HOME<strong>WEATHER</strong>STATION 5 DAY <span style="color:#f26c4f;">FORECAST</span></span>
+  </div> <a href="https://github.com/lrosenman/WS1001-Template/" title="Home Weather Station Template info"><img src="css/logos/uvlogo.png" style="padding:5px;"></a><span style="font-size:11px;margin-left:10px;color:#5f6061;">UVINDEX HOME<strong>WEATHER</strong>STATION 5 DAY <span style="color:#f26c4f;">FORECAST</span></span>
 </body>
 
 </html>
