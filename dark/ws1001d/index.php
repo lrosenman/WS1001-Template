@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Sinanoba Istanbul weather station</title>
+	<title><?php echo "${stationName} \n";?> weather station</title>
 	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
 	<meta content="Home weather station providing current weather conditions " name="description">
 	<meta content="website" property="og:type">
