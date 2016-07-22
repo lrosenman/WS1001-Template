@@ -81,6 +81,6 @@ $CustomBgTheme = 'transparent';
 $colorpickerBgVal = "#ffffff";
 $baroMinMax = false;
 $templateinfo    = ''; // template information page
-$templateversion = 'Version 4.35D Fine Offset Hardware';
+$templateversion = 'Version 4.36D';
 ?>
 

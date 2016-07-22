@@ -1,16 +1,12 @@
-<?php
-include_once('livedata.php');?><head>
-
+<?php include('livedata.php');?><head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-
-</head>  <div class="updatedtime"><span>Updated</span> <?php 
- echo $update;
-?> </div>
-<div class="average"><span></span>
+</head>  
+<div class="updatedtime"><span>Updated</span> <?php  echo $update;?> </div>
+<div class="averagetemp"><span></span>
 <?php
 $sum_total = number_format($temp_c - $trendTemp,2);
-if ($sum_total>0)echo "+$sum_total &deg";
-else if ($sum_total<0)echo "$sum_total &deg";
+if ($sum_total>0)echo "+$sum_total&deg <span><br>last 15 minutes</span>";
+else if ($sum_total<0)echo "$sum_total &deg <span><br>last 15 minutes</span>";
 ?>
 </div>
 <!-- start animated temperature for homeweather station--> 

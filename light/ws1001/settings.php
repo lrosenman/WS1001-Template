@@ -25,7 +25,7 @@ $pressureunit = 'hPa'; // template pressure unit hph or inHg
 $livedata           = 'ws1001.json'; // path to raw data
 $version            = 'Realtime'; // type of source// 
 $hardware           = 'Fine Offset (HP2000)'; // hardware type i.e Davis VP2,Ambient,Accurite,Fine Offset,Aercus etc// 
-$email              = 'weathertemplate@idesign34.com'; // contact email for form
+$email              = 'something@.com'; // contact email for form
 $twitter            = 'istanbul161'; // twitter username used on form if available
 $weatherunderground = "https://www.wunderground.com/personal-weather-station/dashboard?ID=XXXXXXX" ; // add your weatherunderground station url https://www.wunderground.com/personal-weather-station/dashboard?ID=ISTANBUL161 
 // please note there is no requirement to edit below this line unless you really know what your doing //
@@ -79,7 +79,7 @@ $colorpickerFontVal = "#000000";
 $CustomBgTheme = 'transparent';
 $colorpickerBgVal = "#ffffff";
 $baroMinMax = false;
-$templateinfo    = 'https://github.com/lrosenman/WS1001-Template/'; // template information page
-$templateversion = 'Version 4.35 Fine Offset Hardware';
+$templateinfo    = 'https://github.com/lrosenman/WS1001-Template'; // template information page
+$templateversion = 'Version 4.36';
 ?>
 

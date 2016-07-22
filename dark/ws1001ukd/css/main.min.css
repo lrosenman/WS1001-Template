@@ -1,696 +1,733 @@
-/* dark version flex webkit usage homeweatherstation css July 7th 2016  cleaned with http://www.cleancss.com/css-beautify/*/
+/* flex webkit usage homeweatherstation css July 21st 2016  cleaned with http://www.cleancss.com/css-beautify/*/
+@font-face {
+	font-family: weathericons;
+	src: url(fonts/weathericons-regular-webfont.eot?) format("eot"),url(fonts/weathericons-regular-webfont.woff) format("woff"),url(fonts/weathericons-regular-webfont.ttf) format("truetype");
+}
 
 @font-face {
-    font-family: weathericons;
-    src: url(fonts/weathericons-regular-webfont.eot?) format("eot"), url(fonts/weathericons-regular-webfont.woff) format("woff"), url(fonts/weathericons-regular-webfont.ttf) format("truetype");
-    font-weight: normal;
-}
-@font-face {
-    font-family: weathertext;
-    src: url(fonts/weathertext.eot?) format("eot"), url(fonts/weathertext.woff) format("woff"), url(fonts/weathertext.ttf) format("truetype");
-    font-weight: normal;
-}
-@font-face {
-    font-family: Helvetica;
-    src: url(fonts/Helvetica.eot?) format("eot"), url(fonts/Helvetica.woff) format("woff"), url(fonts/Helvetica.ttf) format("truetype");
-    font-weight: normal;
-}
-@font-face {
-    font-family: HelveticaNeue;
-    src: url(fonts/HelveticaNeue.eot) format("eot"), url(fonts/HelveticaNeue.woff) format("woff"), url(fonts/HelveticaNeue.ttf) format("truetype");
-    font-weight: normal;
+	font-family: weathertext;
+	src: url(fonts/weathertext.eot?) format("eot"),url(fonts/weathertext.woff) format("woff"),url(fonts/weathertext.ttf) format("truetype");
 }
 
-*,
-:after,
-:before {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -o-box-sizing: border-box;
-    box-sizing: border-box
+@font-face {
+	font-family: Helvetica;
+	src: url(fonts/Helvetica.eot?) format("eot"),url(fonts/Helvetica.woff) format("woff"),url(fonts/Helvetica.ttf) format("truetype");
 }
+
+@font-face {
+	font-family: HelveticaNeue;
+	src: url(fonts/HelveticaNeue.eot) format("eot"),url(fonts/HelveticaNeue.woff) format("woff"),url(fonts/HelveticaNeue.ttf) format("truetype");
+}
+
+*,:after,:before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
 body {
-    background:#1f1f1f;
-    font-weight: normal;
-    -webkit-font-smoothing: antialiased;
-    -moz-font-smoothing: antialiased;
-    -o-font-smoothing: antialiased;
-    font-smoothing: antialiased;
-    color: #f8f8f8;
-    font-family: "Helvetica", Helvetica, Arial, "Lucida Grande", sans-serif;
+	background:#1f1f1f;
+	font-weight: 400;
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	-o-font-smoothing: antialiased;
+	-ms-font-smoothing: antialiased;
+	color: #ccc;
+	font-family: "Helvetica",Helvetica,Arial,"Lucida Grande",sans-serif;
 	clear: both;
-	
-
 }
 
 #navigation {
-    display: none
+	display: none;
 }
+
 .left {
-    float: left
+	float: left;
 }
+
 .right {
-    float: right;
-    top: 10px;
-    margin-left: 0;
-    margin-right: 20px
+	float: right;
+	top: 10px;
+	margin-left: 0;
+	margin-right: 20px;
 }
+
 input[data-function*='swipe'] {
-    position: absolute;
-    opacity: 0;
+	position: absolute;
+	opacity: 0;
 }
+
 label[data-function*='swipe'] {
-    position: absolute;
-    top: 10px;
-    left: 30px;
-    z-index: 99999;
-    display: block;
-    width: 42px;
-    height: 42px;
-    font: 36px/36px fontawesome;
-    text-align: center;
-    color: #f8f8f8;
-    cursor: pointer;
-    transform: translate3d(0, 0, 0);
-    transition: transform .3s;
-    -webkit-transform: translate3d(0, 0, 0);
-    -webkit-transition: transform .3s;
-    -moz-transform: translate3d(0, 0, 0);
-    -moz-transition: transform .3s;
-    -o-transform: translate3d(0, 0, 0);
-    -o-transition: transform .3s;
+	position: absolute;
+	top: 10px;
+	left: 30px;
+	z-index: 99999;
+	display: block;
+	width: 42px;
+	height: 42px;
+	font: 36px/36px fontawesome;
+	text-align: center;
+	color:#ddd;;
+	cursor: pointer;
+	-webkit-transform: translate3d(0,0,0);
+	-ms-transform: translate3d(0,0,0);
+	-webkit-transition: transform .3s;
+	-moz-transform: translate3d(0,0,0);
+	-moz-transition: transform .3s;
+	-o-transform: translate3d(0,0,0);
+	-o-transition: transform .3s;
+	transform: translate3d(0,0,0);
+	transition: transform .3s;
 }
+
 label[data-function*='swipe']:after {
-    content: 'MENU';
-    font-family: "HelveticaNeue", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    font-weight: 100;
-    font-size: 13px;
-    padding-left: 5px
+	content: 'MENU';
+	font-family: "HelveticaNeue","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+	font-weight: 100;
+	font-size: 13px;
+	padding-left: 5px;
 }
+
 input[data-function*='swipe']:checked ~ label[data-function*='swipe']:after {
-    content: 'CLOSE';
-    font-family: "HelveticaNeue", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    font-weight: 100;
-    font-size: 13px;
-    padding-left: 5px
+	content: 'CLOSE';
+	font-family: "HelveticaNeue","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+	font-weight: 100;
+	font-size: 13px;
+	padding-left: 5px;
 }
+
 input[data-function*='swipe']:checked ~ .content {
-    transform: translate3d(260px, 0px, 0px);
-    -webkit-transform: translate3d(260px, 0px, 0px);
-    -moz-transform: translate3d(260px, 0px, 0px);
-    -o-transform: translate3d(260px, 0px, 0px);
+	-webkit-transform: translate3d(260px,0px,0px);
+	-moz-transform: translate3d(260px,0px,0px);
+	-o-transform: translate3d(260px,0px,0px);
+	-ms-transform: translate3d(260px,0px,0px);
+	transform: translate3d(260px,0px,0px);
 }
+
 input[data-function*='swipe']:checked ~ .sidebar {
-    transform: translate3d(0px, 0px, 0px);
-    -webkit-transform: translate3d(0px, 0px, 0px);
-    -moz-transform: translate3d(0px, 0px, 0px);
-    -o-transform: translate3d(0px, 0px, 0px);
+	-webkit-transform: translate3d(0px,0px,0px);
+	-moz-transform: translate3d(0px,0px,0px);
+	-o-transform: translate3d(0px,0px,0px);
+	-ms-transform: translate3d(0px,0px,0px);
+	transform: translate3d(0px,0px,0px);
 }
+
 input[data-function*='swipe']:checked ~ .sidebar .menu li {
-    width: 260px;
+	width: 260px;
 }
+
 .sidebar {
-    transform: translate3d(-260px, 0px, 0px);
-    -webkit-transform: translate3d(-260px, 0px, 0px);
-    -moz-transform: translate3d(-260px, 0px, 0px);
-    -o-transform: translate3d(-260px, 0px, 0px);
-    position: absolute;
-    width: 250px;
-    background-color: #3d3d3d;
-    color: #ccc;
-    left: 0;
-    height: 100%;
-    transition: all .3s;
-    z-index: 10;
-	top:65px;
-	border:0px;
-	
+	-webkit-transform: translate3d(-260px,0px,0px);
+	-moz-transform: translate3d(-260px,0px,0px);
+	-o-transform: translate3d(-260px,0px,0px);
+	-ms-transform: translate3d(-260px,0px,0px);
+	transform: translate3d(-260px,0px,0px);
+	position: absolute;
+	width: 250px;
+	background: none;
+	color: #ddd;
+	left: 0;
+	height: 100%;
+	transition: all .3s;
+	z-index: 10;
+	top: 65px;
+	border: 0;
 }
 
 .menu li {
-    padding: 5px;
-    list-style: none;
-    background-color: #3d3d3d;
-    text-align: left;
+	padding: 5px;
+	list-style: none;
+	 background-color: #3d3d3d;
+	text-align: left;
 }
 
-.menu li.active {
-    background: #fff;
-    font-family: "HelveticaNeue", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    font-weight: 400;
+.menu .active {
+	 background-color: #3d3d3d;
+	font-family: "HelveticaNeue","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+	font-weight: 400;
 }
+
 .menu li a {
-    color:#ddd;
-    border-bottom: 0px solid #ccc;
-    display: block;
-    text-decoration: none;
-    padding: 3px 0px 3px 0;
-    margin: 0 5px;
-    -webkit-box-shadow: rgba(0, 0, 0, .2) 0 0 1px;
-    -moz-box-shadow: rgba(0, 0, 0, .2) 0 0 1px;
-    -o-box-shadow: rgba(0, 0, 0, .2) 0 0 1px;
-    box-shadow: rgba(0, 0, 0, .2) 0 0 1px;
-    font-family: "HelveticaNeue", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    font-weight: 400;
+	color: #fff;
+	border-bottom: 0 solid #777;
+	display: block;
+	text-decoration: none;
+	padding: 3px 0;
+	margin: 0 5px;
+	-webkit-box-shadow: rgba(0,0,0,.2) 0 0 1px;
+	-moz-box-shadow: rgba(0,0,0,.2) 0 0 1px;
+	-o-box-shadow: rgba(0,0,0,.2) 0 0 1px;
+	box-shadow: rgba(0,0,0,.2) 0 0 1px;
+	font-family: "HelveticaNeue","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+	font-weight: 400;
+	font-size: 12px;
 }
 
 .menu li a:hover {
-    color: #ccc;
-    
+	color: #fff;
 }
-.menu li:hover {
-    
-    background-color: #3d3d3d;
-	color:#ccc !important;
-    border-radius: 0px;
-    font-family: "HelveticaNeue", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-   	border-style: solid;
-    border-width:1px;
-    border-color:#f26c4f;
-	border-left:0px;
-	-webkit-border-top-right-radius: 3px;
--webkit-border-bottom-right-radius: 3px;
--moz-border-radius-topright: 3px;
--moz-border-radius-bottomright: 3px;
-border-top-right-radius: 3px;
-border-bottom-right-radius: 3px;
-margin-left:0px;
-width:90%;
-	
-}
-button {
-    border: none;
-    cursor: pointer;
-    margin: 12px;
-    margin-top: -40px;
-    padding: 0px;
-    background: none;
-}
-header {
-    -webkit-box-shadow: rgba(0, 0, 0, .1) 0 1px 0;
-    background-color: #3d3d3d;
-    box-shadow: rgba(0, 0, 0, .1) 0 1px 0;
-    height: 3.9em;
-    position: fixed;
-    text-align: center;
-    top: 0;
-    width: 100%;
-    z-index: 1;
-}
-.logo {
-    postion: absolute;
-    color:#ddd;
-    font-size: 1.4em;
-    font-weight: 600;
-    letter-spacing: -.05em;
-    line-height: 3.3em;
-    padding-right: .5em;
-    margin-top: -60px;
-}
-h1 {
-    color: #f8f8f8;
-    font-size: 1rem;
-    font-weight: normal;
-    letter-spacing: -.05em;
-    line-height: 3.3em;
-    padding-right: .5em;
-    top: 10px;
-}
-.logo span {
-     color: #f8f8f8;
-    font-weight: 100;
-    letter-spacing: -.05em;
-}
-.loadingtheweather {
-    position: relative;
-    width: 100px;
-    padding-right: 20px;
-    margin: 10px auto;
-}
-.dot {
-    position: absolute;
-    top: 0;
-    background-color: #333;
-    opacity: 0;
-    transform: scale(.7);
-    width: 5px;
-    height: 5px;
-    border-radius: 10px;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-    animation-direction: normal;
-    -webkit-animation-duration: 1s;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-direction: normal;
-    -moz-animation-duration: 1s;
-    -moz-animation-iteration-count: infinite;
-    -moz-animation-direction: normal;
-    margin-bottom: 10px;
-}
-.dot-1 {
-    left: 10%;
-    animation-delay: 0s;
-    animation-name: loading_dot_1;
-    -webkit-animation-delay: 0s;
-    -webkit-animation-name: loading_dot_1;
-    -moz-animation-delay: 0s;
-    -moz-animation-name: loading_dot_1;
-    -o-animation-delay: 0s;
-    -o-animation-name: loading_dot_1;
-}
-.dot-1:before {
-    content: "looking";
-    position: absolute;
-    padding-top: 20px;
-     color:#ddd;
-    font-family: "Helvetica", Helvetica, Arial, Helvetica;
-}
-.dot-2 {
-    left: 36.6%;
-    animation-delay: 0.15s;
-    animation-name: loading_dot_2;
-    -webkit-animation-delay: 0.15s;
-    -webkit-animation-name: loading_dot_2;
-    -moz-animation-delay: 0.15s;
-    -moz-animation-name: loading_dot_2;
-    -o-animation-delay: 0.15s;
-    -o-animation-name: loading_dot_2;
-    background-color: #f26c4f;
-}
-.dot-3 {
-    left: 63.6%;
-    animation-delay: 0.3s;
-    animation-name: loading_dot_3;
-    -webkit-animation-delay: 0.3s;
-    -webkit-animation-name: loading_dot_3;
-    -moz-animation-delay: 0.3s;
-    -moz-animation-name: loading_dot_3;
-    -o-animation-delay: 0.3s;
-    -o-animation-name: loading_dot_3;
-    background-color: #66a1ba;
-}
-.dot-3:before {
-    content: "outside";
-    position: absolute;
-    padding-top: 20px;
-    color: rgba(242, 108, 79, 0.8);
-    font-family: "Helvetica", Helvetica, Arial, Helvetica;
-}
-.dot-4 {
-    left: 90%;
-    animation-delay: 0.45s;
-    animation-name: loading_dot_4;
-    -webkit-animation-delay: 0.45s;
-    -webkit-animation-name: loading_dot_4;
-    -moz-animation-delay: 0.45s;
-    -moz-animation-name: loading_dot_4;
-    -o-animation-delay: 0.45s;
-    -o-animation-name: loading_dot_4;
-    background-color: #cacbcc;
-}
-@keyframes loading_dot_1 {
-    0% {
-        transform: scale(.7);
-        animation-timing-function: ease-out;
-        -webkit-transform: scale(.7);
-        -webkit-animation-timing-function: ease-out;
-        -moz-transform: scale(.7);
-        -moz-animation-timing-function: ease-out;
-        -o-transform: scale(.7);
-        -o-animation-timing-function: ease-out;
-        opacity: 0;
-    }
-    30% {
-        opacity: 1;
-        left: 0%;
-        transform: scale(1);
-        animation-timing-function: ease-in;
-        -webkit-transform: scale(1);
-        -webkit-animation-timing-function: ease-in;
-        -moz-transform: scale(1);
-        -moz-animation-timing-function: ease-in;
-        -o-transform: scale(1);
-        -o-animation-timing-function: ease-in;
-    }
-    80% {
-        transform: scale(.7);
-        -webkit-transform: scale(.7);
-        -moz-transform: scale(.7);
-        -o-transform: scale(.7);
-        opacity: 0;
-    }
-    100% {
-        transform: scale(.7);
-        -webkit-transform: scale(.7);
-        -moz-transform: scale(.7);
-        -o-transform: scale(.7);
-        opacity: 0;
-    }
-}
-@keyframes loading_dot_2 {
-    0% {
-        transform: scale(.7);
-        -webkit-transform: scale(.7);
-        -moz-transform: scale(.7);
-        -o-transform: scale(.7);
-        opacity: 0;
-        animation-timing-function: ease-out;
-        -webkit-animation-timing-function: ease-out;
-        -moz-animation-timing-function: ease-out;
-        -o-animation-timing-function: ease-out;
-    }
-    30% {
-        transform: scale(1);
-        -webkit-transform: scale(1);
-        -moz-transform: scale(1);
-        -o-transform: scale(1);
-        opacity: 1;
-        left: 33.3%;
-        animation-timing-function: ease-out;
-        -webkit-animation-timing-function: ease-out;
-        -moz-animation-timing-function: ease-out;
-        -o-animation-timing-function: ease-out;
-    }
-    80% {
-        transform: scale(.7);
-        -webkit-transform: scale(.7);
-        -moz-transform: scale(.7);
-        -o-transform: scale(.7);
-        opacity: 0;
-    }
-    100% {
-        transform: scale(.7);
-        -webkit-transform: scale(.7);
-        -moz-transform: scale(.7);
-        -o-transform: scale(.7);
-        opacity: 0;
-    }
-}
-@keyframes loading_dot_3 {
-    0% {
-        transform: scale(.7);
-        -webkit-transform: scale(.7);
-        -moz-transform: scale(.7);
-        -o-transform: scale(.7);
-        opacity: 0;
-        animation-timing-function: ease-out;
-        -webkit-animation-timing-function: ease-out;
-        -moz-animation-timing-function: ease-out;
-        -o-animation-timing-function: ease-out;
-    }
-    30% {
-        transform: scale(1);
-        -webkit-transform: scale(1);
-        -moz-transform: scale(1);
-        -o-transform: scale(1);
-        opacity: 1;
-        left: 66.6%;
-        animation-timing-function: ease-in;
-        -webkit-animation-timing-function: ease-in;
-        -moz-animation-timing-function: ease-in;
-        -o-animation-timing-function: ease-in;
-    }
-    80% {
-        transform: scale(.7);
-        -webkit-transform: scale(.7);
-        -moz-transform: scale(.7);
-        -o-transform: scale(.7);
-        opacity: 0;
-    }
-    100% {
-        transform: scale(.7);
-        -webkit-transform: scale(.7);
-        -moz-transform: scale(.7);
-        -o-transform: scale(.7);
-        opacity: 0;
-    }
-}
-@keyframes loading_dot_4 {
-    0% {
-        transform: scale(.7);
-        -webkit-transform: scale(.7);
-        -moz-transform: scale(.7);
-        -o-transform: scale(.7);
-        opacity: 0;
-        animation-timing-function: ease-out;
-        -webkit-animation-timing-function: ease-out;
-        -moz-animation-timing-function: ease-out;
-        -o-animation-timing-function: ease-out;
-    }
-    30% {
-        transform: scale(1);
-        -webkit-transform: scale(1);
-        -moz-transform: scale(1);
-        -o-transform: scale(1);
-        opacity: 1;
-        left: 100%;
-        animation-timing-function: ease-in;
-        -webkit-animation-timing-function: ease-in;
-        -moz-animation-timing-function: ease-in;
-        -o-animation-timing-function: ease-in;
-    }
-    80% {
-        transform: scale(.7);
-        -webkit-transform: scale(.7);
-        -moz-transform: scale(.7);
-        -o-transform: scale(.7);
-        opacity: 0;
-    }
-    100% {
-        transform: scale(.7);
-        -webkit-transform: scale(.7);
-        -moz-transform: scale(.7);
-        -o-transform: scale(.7);
-        opacity: 0;
-    }
-}
-.weather-item,
-body {
-    text-align: center;
-    text-transform: none;
-    font-family: "Helvetica", Helvetica, Arial, "Lucida Grande", sans-serif;
-}
-.weather-container,
-.weather-item,
-a,
-body {
-    text-transform: none;
-    font-family: "Helvetica", Helvetica, Arial, "Lucida Grande", sans-serif;
-	 color: #f8f8f8;
-}
-.weather2-item,
-.weatherfooter-item {
-    font-family: "HelveticaNeue", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-}
-.weather-item{
-     color: rgba(255, 255, 255, 0.8);
-    font-weight: 400;
-    box-shadow: 0 .25em .25em rgba(0, 0, 0, .1);
-	max-height: 360px;
-	background-color: #3d3d3d;
-}
-.weather2-item {
-    color: rgba(255, 255, 255, 0.8);
-    font-weight: 400;
-    box-shadow: 0 .25em .25em rgba(0, 0, 0, .1);
-	height: 80px;
-	background-color: #3d3d3d;
-}
-.h2mbunit,
-h2mb span {
-    position: absolute
-}
-.featherlight:before,
-img,
-wm2 {
-    vertical-align: middle
-}
-.heading1,
-.wi {
-    -moz-osx-font-smoothing: grayscale
-}
-.sr-only,
-svg:not(:root) {
-    overflow: hidden
-}
-.weather-container {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -o-box;
-    display: flex;
-    width: 960px;
-    height: 204px;
-    margin: 5px auto;
-    font-family: "Helvetica", Helvetica, Arial, "Lucida Grande", sans-serif;
-	overflow:hidden;
-}
-.weather-item {
-    width: 320px;
-    height: 201px;
-    margin: 0 5px 5px 0;
-    border: 1px solid #383737;
-    border-bottom: 18px solid #383737;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 2px;
-    padding: 6px;
-    font-size: 1em;
-    font-family: "Helvetica", Helvetica, Arial, "Lucida Grande", sans-serif;
-	color: #f8f8f8;
-	 background-color: #3d3d3d;
-}
-.weather2-container {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -o-box;
-    display: flex;
-    width: 960px;
-    height: 100px;
-    margin: 70px auto -20px;
-	color: #f8f8f8;
-    font-family: "Helvetica", Helvetica, Arial, "Lucida Grande", sans-serif;
-	
-}
-.weather2-item {
-    width: 33.3333%;
-    height: 80px;
-    margin: 0 5px 5px 0;
-    border: 1px solid #383737;
-    text-align: left;
-    padding-left: 10px;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-	-o-border-radius: 2px;
-    border-radius: 2px;
-    float: left;
-    text-transform: none;
-    font-size: .9em;
-    font-family: "Helvetica", Helvetica, Arial, "Lucida Grande", sans-serif;
-	color: #f8f8f8;
-	background: #3d3d3d;
-}
-.weatherfooter-container {
-    display: -ms-flexbox;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -mozt-flex;
-    display: -o-flex;
-    display: -o-box;
-    display: flex;
-    width: 960px;
-    margin: 0 auto 5px;
-    font-family: "HelveticaNeue", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    margin-bottom: 2px;
-}
-#wuforecast:nth-child(4n),
-#wuforecast:nth-child(5n),
-#wuforecast:nth-child(6n),
-#wuforecast:nth-child(7n),
-#wuforecast:nth-child(8n),
-#wuforecast:nth-child(9n),
-.magnitude:nth-child(1n),
-.magnitude:nth-child(2n) {
-    display: none
-}
-.weatherfooter-item {
-  background-color: #3d3d3d;
 
-    width: 100%;
-    height: 90px;
-    margin: 0 5px 5px 0;
-    border: 1px solid #383737;
-    text-align: center;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 2px;
-    padding: 5px;
-    font-family: "HelveticaNeue", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+.menu li:hover {
+	 background-color: #3d3d3d;
+	color: #fff;
+	border-radius: 0;
+	font-family: "HelveticaNeue","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #f26c4f;
+	border-left: 0;
+	-webkit-border-top-right-radius: 3px;
+	-webkit-border-bottom-right-radius: 3px;
+	-moz-border-radius-topright: 3px;
+	-moz-border-radius-bottomright: 3px;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+	margin-left: 0;
+	width: 90%;
 }
+
+button {
+	position:relative;
+	font-size: 16px;
+	border: none;
+	cursor: pointer;
+	margin-right:0px;
+	margin-top: 5px;
+	padding: 0;
+	width:auto;
+	background: none;
+}
+
+button span{
+	color: #ddd;
+	font-size: 14px;
+	font-weight: 100;
+}
+
+
+header {
+	-webkit-box-shadow: rgba(0,0,0,.1) 0 1px 0;
+	-moz-box-shadow: rgba(0,0,0,.1) 0 1px 0;
+	-o-box-shadow: rgba(0,0,0,.1) 0 1px 0;
+	-ms-box-shadow: rgba(0,0,0,.1) 0 1px 0;
+	 background-color: #3d3d3d;
+	box-shadow: rgba(0,0,0,.1) 0 1px 0;
+	height: 3.9em;
+	position: fixed;
+	text-align: center;
+	top: 0;
+	width: 100%;
+	z-index: 1;
+}
+
+.logo {
+	position: absolute;
+	color: #ddd;
+	font-size: 1.4em;
+	font-weight: 600;
+	letter-spacing: -.05em;
+	line-height: 3.3em;
+	padding-right: .5em;
+	margin-top: -60px;
+}
+
+
+.logo span {
+	color: #ddd;
+	font-weight: 100;
+	letter-spacing: -.05em;
+}
+
+.loadingtheweather {
+	position: relative;
+	width: 100px;
+	padding-right: 20px;
+	margin: 10px auto;
+}
+
+.dot {
+	position: absolute;
+	top: 0;
+	background-color: #333;
+	opacity: 0;
+	transform: scale(.7);
+	width: 5px;
+	height: 5px;
+	border-radius: 10px;
+	-webkit-animation-duration: 1s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-direction: normal;
+	-moz-animation-duration: 1s;
+	-moz-animation-iteration-count: infinite;
+	-moz-animation-direction: normal;
+	-o-animation-duration: 1s;
+	-o-animation-iteration-count: infinite;
+	-o-animation-direction: normal;
+	-ms-animation-duration: 1s;
+	-ms-animation-iteration-count: infinite;
+	-ms-animation-direction: normal;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-direction: normal;
+	margin-bottom: 10px;
+}
+
+.dot-1 {
+	left: 10%;
+}
+
+.dot-1:before {
+	content: "looking";
+	position: absolute;
+	padding-top: 20px;
+	color: #ddd;
+	font-family: "Helvetica",Helvetica,Arial,Helvetica;
+}
+
+.dot-2 {
+	left: 36.6%;
+	animation-delay: .15s;
+	-webkit-animation-delay: .15s;
+	-moz-animation-delay: .15s;
+	-o-animation-delay: .15s;
+	background-color: #f26c4f;
+}
+
+.dot-3 {
+	left: 63.6%;
+	animation-delay: .3s;
+	-webkit-animation-delay: .3s;
+	-moz-animation-delay: .3s;
+	-o-animation-delay: .3s;
+	background-color: #66a1ba;
+}
+
+.dot-3:before {
+	content: "outside";
+	position: absolute;
+	padding-top: 20px;
+	color: rgba(242,108,79,0.8);
+	font-family: "Helvetica",Helvetica,Arial,Helvetica;
+}
+
+.dot-4 {
+	left: 90%;
+	animation-delay: .45s;
+	-webkit-animation-delay: .45s;
+	-moz-animation-delay: .45s;
+	-o-animation-delay: .45s;
+	background-color: #cacbcc;
+}
+
+@keyframes loading_dot_1 {
+	0% {
+		animation-timing-function: ease-out;
+		-webkit-transform: scale(.7);
+		-webkit-animation-timing-function: ease-out;
+		-moz-transform: scale(.7);
+		-moz-animation-timing-function: ease-out;
+		-o-transform: scale(.7);
+		-o-animation-timing-function: ease-out;
+		transform: scale(.7);
+		opacity: 0;
+	}
+
+	30% {
+		opacity: 1;
+		left: 0;
+		animation-timing-function: ease-in;
+		-webkit-transform: scale(1);
+		-webkit-animation-timing-function: ease-in;
+		-moz-transform: scale(1);
+		-moz-animation-timing-function: ease-in;
+		-o-transform: scale(1);
+		-o-animation-timing-function: ease-in;
+		transform: scale(1);
+	}
+
+	80% {
+		-webkit-transform: scale(.7);
+		-moz-transform: scale(.7);
+		-o-transform: scale(.7);
+		transform: scale(.7);
+		opacity: 0;
+	}
+
+	100% {
+		-webkit-transform: scale(.7);
+		-moz-transform: scale(.7);
+		-o-transform: scale(.7);
+		transform: scale(.7);
+		opacity: 0;
+	}
+}
+
+@keyframes loading_dot_2 {
+	0% {
+		-webkit-transform: scale(.7);
+		-moz-transform: scale(.7);
+		-o-transform: scale(.7);
+		transform: scale(.7);
+		opacity: 0;
+		animation-timing-function: ease-out;
+		-webkit-animation-timing-function: ease-out;
+		-moz-animation-timing-function: ease-out;
+		-o-animation-timing-function: ease-out;
+	}
+
+	30% {
+		-webkit-transform: scale(1);
+		-moz-transform: scale(1);
+		-o-transform: scale(1);
+		transform: scale(1);
+		opacity: 1;
+		left: 33.3%;
+		animation-timing-function: ease-out;
+		-webkit-animation-timing-function: ease-out;
+		-moz-animation-timing-function: ease-out;
+		-o-animation-timing-function: ease-out;
+	}
+
+	80% {
+		-webkit-transform: scale(.7);
+		-moz-transform: scale(.7);
+		-o-transform: scale(.7);
+		transform: scale(.7);
+		opacity: 0;
+	}
+
+	100% {
+		-webkit-transform: scale(.7);
+		-moz-transform: scale(.7);
+		-o-transform: scale(.7);
+		transform: scale(.7);
+		opacity: 0;
+	}
+}
+
+@keyframes loading_dot_3 {
+	0% {
+		-webkit-transform: scale(.7);
+		-moz-transform: scale(.7);
+		-o-transform: scale(.7);
+		transform: scale(.7);
+		opacity: 0;
+		animation-timing-function: ease-out;
+		-webkit-animation-timing-function: ease-out;
+		-moz-animation-timing-function: ease-out;
+		-o-animation-timing-function: ease-out;
+	}
+
+	30% {
+		-webkit-transform: scale(1);
+		-moz-transform: scale(1);
+		-o-transform: scale(1);
+		transform: scale(1);
+		opacity: 1;
+		left: 66.6%;
+		animation-timing-function: ease-in;
+		-webkit-animation-timing-function: ease-in;
+		-moz-animation-timing-function: ease-in;
+		-o-animation-timing-function: ease-in;
+	}
+
+	80% {
+		-webkit-transform: scale(.7);
+		-moz-transform: scale(.7);
+		-o-transform: scale(.7);
+		transform: scale(.7);
+		opacity: 0;
+	}
+
+	100% {
+		-webkit-transform: scale(.7);
+		-moz-transform: scale(.7);
+		-o-transform: scale(.7);
+		transform: scale(.7);
+		opacity: 0;
+	}
+}
+
+@keyframes loading_dot_4 {
+	0% {
+		-webkit-transform: scale(.7);
+		-moz-transform: scale(.7);
+		-o-transform: scale(.7);
+		transform: scale(.7);
+		opacity: 0;
+		animation-timing-function: ease-out;
+		-webkit-animation-timing-function: ease-out;
+		-moz-animation-timing-function: ease-out;
+		-o-animation-timing-function: ease-out;
+	}
+
+	30% {
+		-webkit-transform: scale(1);
+		-moz-transform: scale(1);
+		-o-transform: scale(1);
+		transform: scale(1);
+		opacity: 1;
+		left: 100%;
+		animation-timing-function: ease-in;
+		-webkit-animation-timing-function: ease-in;
+		-moz-animation-timing-function: ease-in;
+		-o-animation-timing-function: ease-in;
+	}
+
+	80% {
+		-webkit-transform: scale(.7);
+		-moz-transform: scale(.7);
+		-o-transform: scale(.7);
+		transform: scale(.7);
+		opacity: 0;
+	}
+
+	100% {
+		-webkit-transform: scale(.7);
+		-moz-transform: scale(.7);
+		-o-transform: scale(.7);
+		transform: scale(.7);
+		opacity: 0;
+	}
+}
+
+.weather-item,body {
+	text-align: center;
+	text-transform: none;
+	font-family: "Helvetica",Helvetica,Arial,"Lucida Grande",sans-serif;
+}
+
+.weather-container,.weather-item,a,body {
+	text-transform: none;
+	font-family: "Helvetica",Helvetica,Arial,"Lucida Grande",sans-serif;
+}
+
+.weather2-item,.weatherfooter-item {
+	font-family: "HelveticaNeue","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+}
+
+.weather-item,.weather2-item {
+	color: #ddd;
+	font-weight: 400;
+	box-shadow: 0 .25em .25em rgba(0,0,0,.1);
+	max-height: 360px;
+}
+
+.h2mbunit,h2mb span {
+	position: absolute;
+}
+
+.featherlight:before,img,wm2 {
+	vertical-align: middle;
+}
+
+.heading1,.wi {
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.sr-only,svg:not(:root) {
+	overflow: hidden;
+}
+
+.weather-container {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -o-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	list-style: none;
+	width: 960px;
+	height: 204px;
+	background-color: none;
+	margin: 5px auto;
+	font-family: "Helvetica",Helvetica,Arial,"Lucida Grande",sans-serif;
+	overflow: hidden;
+}
+
+.weather-item {
+	background-color: #3d3d3d;
+	width: 320px;
+	height: 201px;
+	margin: 0 5px 5px 0;
+	border: 1px solid #383737;
+	border-bottom: 18px solid #383737;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-o-border-radius: 4px;
+	-ms-border-radius: 4px;
+	border-radius: 4px;
+	padding: 6px;
+	font-size: 1em;
+	font-family: "Helvetica",Helvetica,Arial,"Lucida Grande",sans-serif;
+}
+
+.weather2-container {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -o-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	width: 960px;
+	height: 100px;
+	background-color: none;
+	margin: 65px auto -20px;
+	font-family: "Helvetica",Helvetica,Arial,"Lucida Grande",sans-serif;
+}
+
+.weather2-item {
+	background-color: #3d3d3d;
+	width: 33.3333%;
+	height: 80px;
+	margin: 0 5px 5px 0;
+	border: 1px solid #383737;
+	text-align: left;
+	padding-left: 10px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-o-border-radius: 4px;
+	-ms-border-radius: 4px;
+	border-radius: 4px;
+	float: left;
+	text-transform: none;
+	font-size: .9em;
+	font-family: "Helvetica",Helvetica,Arial,"Lucida Grande",sans-serif;
+}
+
+.weatherfooter-container {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -o-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	width: 960px;
+	margin: 0 auto 5px;
+	font-family: "HelveticaNeue","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+	margin-bottom: 2px;
+}
+
+#wuforecast:nth-child(4n),#wuforecast:nth-child(5n),#wuforecast:nth-child(6n),#wuforecast:nth-child(7n),#wuforecast:nth-child(8n),#wuforecast:nth-child(9n),.magnitude:nth-child(1n),.magnitude:nth-child(2n) {
+	display: none;
+}
+
+.weatherfooter-item {
+	background-color: #3d3d3d;
+	width: 100%;
+	height: 90px;
+	margin: 0 5px 5px 0;
+	border: 1px solid #383737;
+	text-align: center;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-o-border-radius: 4px;
+	-ms-border-radius: 4px;
+	border-radius: 4px;
+	padding: 5px;
+	font-family: "HelveticaNeue","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+}
+
 .barometergaugegrid {
-    width: 90%;
-    margin: 10px 0 auto;
-    text-align: center
+	width: 90%;
+	margin: 10px 0 auto;
+	text-align: center;
 }
+
 h2mb {
-    letter-spacing: 0;
-    font: 2em Helvetica, weathertext, Helvetica, Arial
+	letter-spacing: 0;
+	font: 2em Helvetica,weathertext,Helvetica,Arial;
 }
+
 h2mb span {
-    color: #F26C4F;
-    margin-left: 0;
-    margin-top: 5px;
-    font: .4em Helvetica, Helvetica, Arial, Helvetica
+	color: #F26C4F;
+	margin-left: 0;
+	margin-top: 5px;
+	font: .4em Helvetica,Helvetica,Arial,Helvetica;
 }
+
 .h2mbvalue {
-    margin-top: 3px;
-    padding-right: 0;
-     color: #f8f8f8;
-    font-weight: 400;
-    font-family: "weathertext", Helvetica, Arial, "Lucida Grande", sans-serif;
+	margin-top: 3px;
+	padding-right: 0;
+	color: #ccc;
+	font-weight: 400;
+	font-family: "weathertext",Helvetica,Arial,"Lucida Grande",sans-serif;
 }
+
 .h2mbunit {
-    padding-right: 25px;
-    margin-top: -60px;
-    margin-left: 115px;
-    color: rgba(153, 153, 153, .8);
-    font: .8em Helvetica, Helvetica, Arial, Helvetica
+	padding-right: 25px;
+	margin-top: -60px;
+	margin-left: 115px;
+	color: #ddd;
+	font: .8em Helvetica,Helvetica,Arial,Helvetica;
 }
+
 .barometertrend {
-    position: relative;
-    color:#ddd;
-    margin: -58px auto auto;
-    text-align: center;
-    z-index: 1;
-    font: 11px Helvetica, Arial, Helvetica
+	position: relative;
+	color: #fff;
+	margin: -58px auto auto;
+	text-align: center;
+	z-index: 1;
+	font: 11px Helvetica,Arial,Helvetica;
 }
-.barometertrend falling,
-.barometertrend rising,
+
+.barometertrend falling,.barometertrend rising,.barometertrend steady {
+	font-family: Helvetica,Helvetica,Arial,Helvetica;
+}
+
 .barometertrend steady {
-    font-family: Helvetica, Helvetica, Arial, Helvetica
+	color: #4c9f83;
 }
-.barometertrend steady {
-    color: #4c9f83
-}
+
 .barometertrend rising {
-    color: #F26C4F
+	color: #F26C4F;
 }
+
 .barometertrend falling {
-    color: #66a1ba
+	color: #66a1ba;
 }
+
 .temptrend {
-    position: absolute;
-    color: #ccc;
-    margin-top: 47px;
-    margin-left: 15%;
-    text-align: center;
-    z-index: auto;
-    font: 600 11px Helvetica, Helvetica, Arial, Helvetica
+	position: absolute;
+	color: #fff;
+	margin-top: 38px;
+	margin-left: 15%;
+	text-align: center;
+	z-index: auto;
+	font: 600 11px Helvetica,Helvetica,Arial,Helvetica;
 }
+
 .indoortrend {
-    position: absolute;
-    margin-left: 255px;
-    top: -10px;
-    background: none;
-    height: 25px;
+	position: absolute;
+	margin-left: 255px;
+	top: 0;
+	background: none;
+	height: 25px;
 }
+
 .indoorfeels {
-    position: absolute;
-    margin-left: 202px;
-    top: 42px;
-    background: none;
-    color:#ddd;
-    font-family: "Helvetica", Helvetica, Arial, Helvetica;
-    font-size: 11px;
-    width: 80px;
-    font-weight: 600;
+	position: absolute;
+	margin-left: 202px;
+	top: 42px;
+	background: none;
+	color: #f1846d;
+	font-family: "Helvetica",Helvetica,Arial,Helvetica;
+	font-size: 11px;
+	width: 80px;
+	font-weight: 600;
 }
+
 .indoorfeels span {
-    color:#ddd;
-    font-weight: normal;
+	color: #ddd;
+	font-weight: 400;
 }
+
 h3 {
-    font: 4em weathertext, helvetica; color: #f8f8f8;
+	font: 4em weathertext,helvetica;
 }
+
 .featherlight {
     display: none;
     position: fixed;
@@ -767,189 +804,224 @@ h3 {
 	 background-color: #3d3d3d;
 	background-image: url(logos/smalllogo.png) right 145px bottom 10px no-repeat ;
 }
-.box.icon-humidity,
-.box.icon-temp {
-    background-repeat: no-repeat;
-    background-position: bottom left
+
+.box.icon-humidity,.box.icon-temp {
+	background-repeat: no-repeat;
+	background-position: bottom left;
 }
+
 /*scrollbar color change*/
 ::-webkit-scrollbar {
-    width: 12px
+	width: 12px;
 }
+
 ::-webkit-scrollbar-track {
-    background-color: #eaeaea;
-    border-left: 1px solid #ccc
+	background-color: #eaeaea;
+	border-left: 1px solid #ccc;
 }
+
 ::-webkit-scrollbar-thumb {
-    background-color: #F26C4F
+	background-color: #F26C4F;
 }
+
 ::-webkit-scrollbar-thumb:hover {
-    background-color: #66a1ba
+	background-color: #66a1ba;
 }
 
 ::-moz-scrollbar {
-    width: 12px
+	width: 12px;
 }
+
 ::-moz-scrollbar-track {
-    background-color: #eaeaea;
-    border-left: 1px solid #ccc
+	background-color: #eaeaea;
+	border-left: 1px solid #ccc;
 }
+
 ::-moz-scrollbar-thumb {
-    background-color: #F26C4F
+	background-color: #F26C4F;
 }
+
 ::-moz-scrollbar-thumb:hover {
-    background-color: #66a1ba
+	background-color: #66a1ba;
 }
+
 ::-o-scrollbar {
-    width: 12px
+	width: 12px;
 }
+
 ::-o-scrollbar-track {
-    background-color: #eaeaea;
-    border-left: 1px solid #ccc
+	background-color: #eaeaea;
+	border-left: 1px solid #ccc;
 }
+
 ::-o-scrollbar-thumb {
-    background-color: #F26C4F
+	background-color: #F26C4F;
 }
+
 ::-o-scrollbar-thumb:hover {
-    background-color: #66a1ba
+	background-color: #66a1ba;
 }
+
 ::scrollbar {
-    width: 12px
+	width: 12px;
 }
+
 ::scrollbar-track {
-    background-color: #eaeaea;
-    border-left: 1px solid #ccc
+	background-color: #eaeaea;
+	border-left: 1px solid #ccc;
 }
+
 ::scrollbar-thumb {
-    background-color: #F26C4F
+	background-color: #F26C4F;
 }
+
 ::scrollbar-thumb:hover {
-    background-color: #66a1ba
+	background-color: #66a1ba;
 }
 
 .clock-container {
-    position: absolute;
-    margin-top: 20px;
-    margin-left: 140px;
-    width: 150px
+	position: absolute;
+	margin-top: 20px;
+	margin-left: 140px;
+	width: 150px;
 }
+
 .clock-container > ul {
-    display: inline-block;
-    color: #F26C4F;
-    font: 2em weathertext, helvetica
+	display: inline-block;
+	color: #F26C4F;
+	font: 2em weathertext,helvetica;
 }
+
 .clock-container > ul > li {
-    color: #F26C4F;
-    list-style: none
+	color: #F26C4F;
+	list-style: none;
 }
+
 .clock-container > ul > li > span {
-    position: absolute;
-    display: block;
-    margin-top: -37px;
-    font-family: weathertext, helvetica;
-    color: #F26C4F;
-    margin-right: 40px
+	position: absolute;
+	display: block;
+	margin-top: -37px;
+	font-family: weathertext,helvetica;
+	color: #F26C4F;
+	margin-right: 40px;
 }
+
 .box.icon-temp {
-    background-image: url(homepageicons/temp.png)
+	background-image: url(homepageicons/temp.png);
 }
+
 .box.icon-humidity {
-    background-image: url(homepageicons/humidity.png)
+	background-image: url(homepageicons/humidity.png);
 }
+
 .indoortitles {
-    color:#ddd;
-    margin-top: 5px;
-    text-align: center;
-    font: 1.2em Helvetica, Helvetica, Arial, Helvetica
+	color: #F26C4F;
+	margin-top: 5px;
+	text-align: center;
+	font: 1.2em Helvetica,Helvetica,Arial,Helvetica;
 }
-.chartindoor,
-.indoorlocation,
-.indoorunit {
-    margin-top: 40px;
-    text-align: left;
-    font: 400 11px Helvetica, Arial, Helvetica;
-    position: absolute;
-    background: 0 0
+
+.chartindoor,.indoorlocation,.indoorunit {
+	margin-top: 40px;
+	text-align: left;
+	font: 400 11px Helvetica,Arial,Helvetica;
+	position: absolute;
+	background: 0 0;
 }
+
 .chartindoor {
-    margin-left: 250px
+	margin-left: 250px;
 }
+
 .indoorunit {
-    margin-left: 40px
+	margin-left: 40px;
 }
+
 .indoorlocation {
-    margin-left: 60px;
-    width: 150px
+	margin-left: 60px;
+	width: 150px;
 }
+
 .indoorvalues {
-    position: absolute;
-    margin-top: -15px
+	position: absolute;
+	margin-top: -15px;
 }
+
 .heading1 {
-     color: #f26c4f;
-    -webkit-font-smoothing: antialiased;
-    font: 1em / 15px Helvetica, Helvetica, Arial, Helvetica
+	color: #ddd;
+	-webkit-font-smoothing: antialiased;
+	font: 1em / 15px Helvetica,Helvetica,Arial,Helvetica;
 }
-.tempcontainer,
-.tempcontainer1 {
-    float: left;
-    font-family: weathertext, Helvetica, Arial
+
+.tempcontainer,.tempcontainer1 {
+	float: left;
+	font-family: weathertext,Helvetica,Arial;
 }
+
 supmb {
-    font-size: .8em;
-    color:#ddd;
+	font-size: .8em;
+	color: #ddd;
 }
+
 supunit {
-    font-size: .7em;
-    color:#ddd;
-    font-weight: 400;
-    vertical-align: top
+	font-size: .7em;
+	color: #66a1ba;
+	font-weight: 400;
+	vertical-align: top;
 }
+
 line {
-    font-size: 2em;
-    color: #ccc;
-    vertical-align: text-bottom
+	font-size: 2em;
+	color: #ccc;
+	vertical-align: text-bottom;
 }
+
 verticalline {
-    border-right: thin solid #ccc;
-    margin-right: 10px
+	border-right: thin solid #ccc;
+	margin-right: 10px;
 }
+
 a:visited {
-    border: none
+	border: none;
 }
-.tempcontainer .circleOut,
-.tempcontainer1 .circleOut {
-    border-radius: 50%;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    top: -15px;
-    color: #fff
+
+.tempcontainer .circleOut,.tempcontainer1 .circleOut {
+	border-radius: 50%;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	top: -25px;
+	color: #fff;
 }
+
 .tempcontainer {
-    position: relative;
-    width: 120px;
-    height: 120px;
-    margin: 30px 10px 10px 35px
+	position: relative;
+	width: 115px;
+	height: 115px;
+	margin: 40px 10px 10px 55px;
 }
+
 .tempcontainer .circleOut {
-    position: absolute;
-    width: 120px;
-    height: 120px;
-    font-size: 38px
+	position: absolute;
+	width: 120px;
+	height: 120px;
+	font-size: 38px;
 }
+
 .tempcontainer1 {
-    position: relative;
-    width: 100px;
-    height: 100px;
-    margin: 20px 10px 10px
+	position: relative;
+	width: 100px;
+	height: 100px;
+	margin: 20px 10px 10px;
 }
+
 .tempcontainer1 .circleOut {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    font: 42px weathertext, Helvetica, Arial
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	font: 42px weathertext,Helvetica,Arial;
 }
+
 .temptext {
     font-size: 34px;
     color: #fff;
@@ -1628,835 +1700,772 @@ width: 115px;
   text-fill-color: transparent;
   
 }
-
-.indoortemptexthot {
-    color: #f26c4f;
-    position: absolute;
-    padding-top: 0;  
-    font: 28px weathertext, Arial;
-	position: absolute;
-    top:15px;  
-    margin-left:190px;
-	
-  
+supsolar,suptemp1 {
+	color: #ddd;
 }
 
-.indoortemptextcool {
-    color: #ff7f00;
-    position: absolute;
-    padding-top: 0;  
-    font: 28px weathertext, Arial;
-	position: absolute;
-    top:15px;  
-    margin-left:190px;
-	
-  
-}
-
-
-.indoortemptextcooler {
-    color: #ff7f00;
-    position: absolute;
-    padding-top: 0;  
-    font: 28px weathertext, Arial;
-	position: absolute;
-    top:15px;  
-    margin-left:190px;
-	
-  
-}
-
-
-supsolar,
-suptemp1 {
-    color:#ddd;
-}
 .temptext1 span {
-    position: absolute;
-     color:#fff;
-    margin-left: 5px;
-    font: 800 11px Helvetica, Helvetica, Arial, Helvetica;
+	position: absolute;
+	color: #ddd;
+	margin-left: 5px;
+	font: 800 11px Helvetica,Helvetica,Arial,Helvetica;
 }
-suptemp,
-suptemp1 {
-    font-size: .7em;
-    vertical-align: text-top
+
+suptemp,suptemp1 {
+	font-size: .7em;
+	vertical-align: text-top;
 }
+
 suptemp {
-    color:#ddd
+	color: #fff;
 }
+
 supsolar {
-    font-size: .8em;
-    vertical-align: text-top
+	font-size: .8em;
+	vertical-align: text-top;
 }
+
 .who {
-    position: absolute;
-    margin-top: -30px;
-    text-align: center;
-    margin-left: 5%;
-    font: 12px Helvetica, Helvetica, Arial, Helvetica
+	position: absolute;
+	margin-top: -30px;
+	text-align: center;
+	margin-left: 5%;
+	font: 12px Helvetica,Helvetica,Arial,Helvetica;
 }
+
 .magnitude {
-    color: #ccc;
-    margin-top: 100px
+	color: #fff;
+	margin-top: 100px;
 }
 
 .magnitude2 {
-    color: #fff;
-    margin-top: 100px
-}
-.emsc,
-.mag,
-.mag .content,
-.place {
-     color:#ccc;
-}
-#wuforecast,
-.magnitude:first-child {
-    display: block
-}
-.mag {
-    border-radius: 50%;
-    background: none;
-    border: 3px solid #5f6061;
-    margin-left: 15px;
-    text-align: center;
-    margin-top: -87px;
-    font-size:2em;
-    font-family: "HelveticaNeue", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    height: 90px;
-    width: 90px;
-    float: left;
-	color: #ccc;
-}
-.mag .content {
-    float: left;
-    margin-top: -.80em;
-    padding-top: 50%;
-    text-align: center;
-    width: 100%;
-    z-index: 99999;
-    font: 1em / 1 Helvetica, Helvetica, Arial
-}
-.place {
-    float: left;
-    width: 140px;
-    margin-left: 97px;
-    margin-top: -35px;
-    display: table-row;    
-    line-height:10px;
-	font-size:0.6rem;
-	font-weight:600;
-	font-family:  "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-	color: #ccc;
-	
+	color: #fff;
+	margin-top: 100px;
 }
 
+.emsc,.mag,.mag .content,.place {
+	color: #ddd;
+}
+
+#wuforecast,.magnitude:first-child {
+	display: block;
+}
+
+.mag {
+	border-radius: 50%;
+	background: none;
+	border: 2px solid #777;
+	margin-left: 15px;
+	text-align: center;
+	margin-top: -87px;
+	font-size: 2em;
+	font-family: "HelveticaNeue","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+	height: 90px;
+	width: 90px;
+	float: left;
+	color:#ddd;
+}
+
+.mag .content {
+	float: left;
+	margin-top: -.8em;
+	padding-top: 50%;
+	text-align: center;
+	width: 100%;
+	z-index: 99999;
+	font: 1em / 1 Helvetica,Helvetica,Arial;
+}
+
+.place {
+	width: 140px;
+	margin-left: 97px;
+	margin-top: 5px;
+	line-height: 10px;
+	font-size: .6rem;
+	font-weight: 600;
+	font-family: "Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+	color: #ddd;
+}
 
 .mag2 {
-	position:absolute;
-    border-radius: 50%;
-    padding-top: 0px;
-    background: none;
-    border: 2px solid #5f6061;
-    margin-left: -115px;
-    text-align: center;
-    margin-top: -10px;
-	font-size:2em;
-    font-family: "HelveticaNeue", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    height: 60px;
-    width: 60px;
-    float: left;
-	color:#f26c4f;
+	position: absolute;
+	border-radius: 50%;
+	padding-top: 0;
+	background: #f26c4f;
+	border: 2px solid #777;
+	margin-left: -115px;
+	text-align: center;
+	margin-top: -10px;
+	font-size: 2em;
+	font-family: "HelveticaNeue","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+	height: 60px;
+	width: 60px;
+	float: left;
+	color: #fff;
 }
+
 .mag2 .content2 {
-    float: left;
-    margin-top: -.70em;
-    padding-top: 50%;
-    text-align: center;
-    width: 100%;
-    z-index: 99999;
-    font: 0.7em / 1 Helvetica, Helvetica, Arial;
-	color:#f26c4f;
+	float: left;
+	margin-top: -.7em;
+	padding-top: 50%;
+	text-align: center;
+	width: 100%;
+	z-index: 99999;
+	font: .7em / 1 Helvetica,Helvetica,Arial;
+	color: #fff;
 }
+
 .place2 {
-    float: left;
-    width: 140px;
-    margin-left: 60px;
-    margin-top: -30px;
-    display: table-row;    
-    line-height:10px;
-	font-size:0.6rem;
-	font-weight:600;
-	font-family:  "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-	color: #ccc;
+	float: left;
+	width: 140px;
+	margin-left: 52px;
+	margin-top: -30px;
+	line-height: 10px;
+	font-size: .6rem;
+	font-weight: 600;
+	font-family: "Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+	color:#ddd;;
 }
+
 .magtext2 {
-    margin-top: 0px;
-    position: absolute;
-    margin-left: 22px;
-    color: #f8f8f8;
-    text-transform:none;
-    font: 8px Helvetica, Helvetica, Arial, Helvetica;
-	}
+	margin-top: 0;
+	position: absolute;
+	margin-left: 22px;
+	color: #f8f8f8;
+	text-transform: none;
+	font: 8px Helvetica,Helvetica,Arial,Helvetica;
+}
 
 .magtext2:after {
 	font-family: FontAwesome;
-    content: "\f140";
-    color: #ccc;  
-	font-size:1em;
-	line-height:12px;
-	margin-left:10px;
-    
+	content: "\f140";
+	color: #fff;
+	font-size: 1em;
+	line-height: 14px;
+	margin-left: 10px;
 }
-
 
 .emsc {
-    width: 40%;
-    line-height: .9em;
-    font-size: .8em;
-    border-radius: 4px;
-    padding: 2px;
-    border: 1px solid rgba(218, 73, 53, .2);
-    float: right;
-    margin-right: 10px
+	width: 40%;
+	line-height: .9em;
+	font-size: .8em;
+	border-radius: 4px;
+	padding: 2px;
+	border: 1px solid #ddd;
+	float: right;
+	margin-right: 10px;
 }
+
 .emsc span {
-    font-size: .8em;
-    color: #fc6d58
+	font-size: .8em;
+	color: #fc6d58;
 }
+
 .magtext {
-    margin-top: 0px;
-    position: absolute;
-    margin-left: 10px;
-    color: #66a1ba;
-    text-transform: uppercase;
-    font: 9px Helvetica, Helvetica, Arial, Helvetica
+	margin-top: 0;
+	position: absolute;
+	margin-left: 6px;
+	color: #66a1ba;
+	text-transform: uppercase;
+	font: 9px Helvetica,Helvetica,Arial,Helvetica;
 }
+
 .magtext:before {
 	font-family: FontAwesome;
-    content: "\f140";
-    color: #f26c4f;  
-	font-size:1em;
-	line-height:12px;
-    
+	content: "\f140";
+	color: #f26c4f;
+	font-size: 1em;
+	line-height: 12px;
 }
 
 uvi {
-    font-size: .35em;
-    text-align: center;
-    margin: 32px auto 0 -30px;
-    position: absolute;		
-	}
+	font-size: .35em;
+	text-align: center;
+	margin: 32px auto 0 -30px;
+	position: absolute;
+}
+
 uviforecast {
-    font-size: .35em;
-    text-align: center;
-    margin: -3px auto 0 0px;
-    position: absolute
+	font-size: .35em;
+	text-align: center;
+	margin: -3px auto 0 0;
+	position: absolute;
 }
-.uv01,
-.uv01,
-.uv03,
-.uv35,
-.uv67,
-.uv810,
-.uv1112 {
-    padding-top: 4%;
-    font: 2em Helvetica, Helvetica, Arial, Helvetica;
-    color: #ccc;
-    margin-top: -25px;
-    border-radius: 50%;
-    margin-left: 20px;
-    border: 3px solid #5f6061;
-    width: 90px;
-    height: 90px;
-    text-align: center;
-	 background: none;
-	 -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
-	
+
+.uv01,.uv03,.uv35,.uv67,.uv810,.uv1112 {
+	padding-top: 4%;
+	font: 2em Helvetica,Helvetica,Arial,Helvetica;
+	color: #fff;
+	margin-top: -25px;
+	border-radius: 50%;
+	margin-left: 20px;
+	border: 2px solid #777;
+	width: 90px;
+	height: 90px;
+	text-align: center;
 }
+
 .uv01 {
-    background:none;
-	color: #ccc;
-	 background: transparent;
-  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #ccc), color-stop(100%, #fff));
-  background: -webkit-linear-gradient(-45deg, #ccc 0%, #fff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
+	color: #4e5a69;
 }
-.uv01:after{
-    
-	content:'UVINDEX';
-	display:block;
-	font-size:10px;
+
+.uv01:after {
+	content: 'UVINDEX';
+	display: block;
+	font-size: 10px;
 }
-	
+
 .uv03 {
-    
-	color: rgba(79, 184, 123, 1);
-	background: transparent;
-  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, rgba(79, 184, 123, 1)), color-stop(100%, #fff));
-  background: -webkit-linear-gradient(-45deg, rgba(79, 184, 123, 1) 0%, #fff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
+	color: #4fb87b;
 }
-.uv03:after{
-    
-	content:'UVINDEX';
-	display:block;
-	font-size:10px;
+
+.uv03:after {
+	content: 'UVINDEX';
+	display: block;
+	font-size: 10px;
 }
 
 .uv35 {
-     
-	color: rgba(238, 166, 89, 1);
-	 background: transparent;
-  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, rgba(238, 166, 89, 1)), color-stop(100%, #fff));
-  background: -webkit-linear-gradient(-45deg, rgba(238, 166, 89, 1) 0%, #fff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
+	color: #eea659;
 }
 
-.uv35:after{
-    
-	content:'UVINDEX';
-	display:block;
-	font-size:10px;
+.uv35:after {
+	content: 'UVINDEX';
+	display: block;
+	font-size: 10px;
 }
 
 .uv67 {
-    
-	 color:rgba(238, 114, 89, 1);
-	 background: transparent;
-  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #f0795b), color-stop(100%, #fff));
-  background: -webkit-linear-gradient(-45deg, #f0795b 0%, #fff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
+	color: #ee7259;
 }
 
-.uv67:after{
-    
-	content:'UVINDEX';
-	display:block;
-	font-size:10px;
+.uv67:after {
+	content: 'UVINDEX';
+	display: block;
+	font-size: 10px;
 }
+
 .uv810 {
-    
-	color:rgba(209, 94, 82, 1);
-	background: transparent;
-  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #f30), color-stop(100%, #fff));
-  background: -webkit-linear-gradient(-45deg, #30 0%, #fff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
+	color: #d15e52;
 }
 
-.uv810:after{
-    
-	content:'UVINDEX';
-	display:block;
-	font-size:10px;
+.uv810:after {
+	content: 'UVINDEX';
+	display: block;
+	font-size: 10px;
 }
+
 .uv1112 {
-    
-	color: rgba(148, 81, 136, 1);
-    font: 1.9em Helvetica, Helvetica, Arial, Helvetica;
-	 background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, rgba(148, 81, 136, 1)), color-stop(100%, #fff));
-  background: -webkit-linear-gradient(-45deg, rgba(148, 81, 136, 1) 0%, #fff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
+	color: #945188;
+	font: 1.9em Helvetica,Helvetica,Arial,Helvetica;
 }
-.uv1112:after{
-    
-	content:'UVINDEX';
-	display:block;
-	font-size:10px;
+
+.uv112:after {
+	content: 'UVINDEX';
+	display: block;
+	font-size: 10px;
 }
 
 .solarcircle {
-    position: absolute;
-    margin-top: -15px;
-    border-radius: 100%;
-    -moz-border-radius: 100%;
-    -webkit-border-radius: 100%;
-    height: 60px;
-    width: 60px;
-    margin-left: 100px;
-    border: 2px solid #5f6061;
-    padding-top: 18px;
-    background: none;
-    font-family: "Helvetica", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-	font-size:14px;
-	font-weight:600;
-    line-height: 12px;
+	position: absolute;
+	margin-top: -15px;
+
+	-moz-border-radius: 100%;
+	-webkit-border-radius: 100%;
+	border-radius: 100%;
+	height: 60px;
+	width: 60px;
+	margin-left: 100px;
+	border: 2px solid #777;
+	padding-top: 18px;
+	background:none;
+	font-family: "Helvetica","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 12px;
 	color: #f26c4f;
-	}
+}
+
 .solarcircle span {
-    color: #999;
-    text-align: center;
-    font: 600 .7em / 10px Helvetica, Helvetica, Arial, Helvetica
+	color: #ddd;
+	text-align: center;
+	font: 600 .7em / 10px Helvetica,Helvetica,Arial,Helvetica;
 }
 
 .solarcircle1 {
-    position: absolute;
-    margin-top: -15px;
-    border-radius: 100%;
-    -moz-border-radius: 100%;
-    -webkit-border-radius: 100%;
-    height: 60px;
-    width: 60px;
-    margin-left: 100px;
-    border: 2px solid #5f6061;
-    padding-top: 18px;
-    background: none;
-    font-family: "Helvetica", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-	font-size:14px;
-	font-weight:600;
-    line-height: 12px;
+	position: absolute;
+	margin-top: -15px;
+	-moz-border-radius: 100%;
+	-webkit-border-radius: 100%;
+	border-radius: 100%;
+	height: 60px;
+	width: 60px;
+	margin-left: 100px;
+	border: 2px solid #777;
+	padding-top: 18px;
+	background:none;
+	font-family: "Helvetica","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 12px;
 	color: #4c9f83;
-	
 }
+
 .solarcircle1 span {
-   color: #999;
-    text-align: center;
-    font: 600 .7em / 10px Helvetica, Helvetica, Arial, Helvetica
+	color: #ddd;
+	text-align: center;
+	font: 600 .7em / 10px Helvetica,Helvetica,Arial,Helvetica;
 }
+
 .solarcircle2 {
-    position: absolute;
-    margin-top: -15px;
-    border-radius: 100%;
-    -moz-border-radius: 100%;
-    -webkit-border-radius: 100%;
-    height: 60px;
-    width: 60px;
-    margin-left: 100px;
-    border: 2px solid #5f6061;
-    padding-top: 18px;
-   background: none;
-    font-family: "Helvetica", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-	font-size:14px;
-	font-weight:600;
-    line-height: 12px;
+	position: absolute;
+	margin-top: -15px;
+	-moz-border-radius: 100%;
+	-webkit-border-radius: 100%;
+	border-radius: 100%;
+	height: 60px;
+	width: 60px;
+	margin-left: 100px;
+	border: 2px solid #777;
+	padding-top: 18px;
+	background:none;
+	font-family: "Helvetica","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 12px;
 	color: #4c9f83;
-	
 }
+
 .solarcircle2 span {
-    color: #999;
-    text-align: center;
-    font: 600 .7em / 10px Helvetica, Helvetica, Arial, Helvetica
+	color: #ddd;
+	text-align: center;
+	font: 600 .7em / 10px Helvetica,Helvetica,Arial,Helvetica;
 }
 
-.solarcircle3{
-    position: absolute;
-    margin-top: -15px;
-    border-radius: 100%;
-    -moz-border-radius: 100%;
-    -webkit-border-radius: 100%;
-    height: 60px;
-    width: 60px;
-    margin-left: 100px;
-    border: 2px solid #5f6061;
-    padding-top: 18px;
-    background:none;
-    font-family: "Helvetica", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-	font-size:14px;
-	font-weight:600;
-    line-height: 12px;
+.solarcircle3 {
+	position: absolute;
+	margin-top: -15px;
+	border-radius: 100%;
+	-moz-border-radius: 100%;
+	-webkit-border-radius: 100%;
+	height: 60px;
+	width: 60px;
+	margin-left: 100px;
+	border: 2px solid #777;
+	padding-top: 18px;
+	background:none;
+	font-family: "Helvetica","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 12px;
 	color: #66a1ba;
-	
 }
+
 .solarcircle3 span {
-    color: #999;
-    text-align: center;
-    font: 600 .7em / 10px Helvetica, Helvetica, Arial, Helvetica
+	color: #ddd;
+	text-align: center;
+	font: 600 .7em / 10px Helvetica,Helvetica,Arial,Helvetica;
 }
+
 .solatext {
-    color: #ccc;
-    float: left;
-    width: 150px;
-    margin-left: 135px;
-    margin-top: 0px;
-    font: 12px / 1em Helvetica, Helvetica, Arial, Helvetica
-}
-.solatext color{
-    color: #F26C4F;
-	font-weight:600;
+	color: #ccc;
+	float: left;
+	width: 150px;
+	margin-left: 135px;
+	margin-top: 0;
+	font: 12px / 1em Helvetica,Helvetica,Arial,Helvetica;
 }
 
-.solatext color1{
-    color: #4c9f83;
-	font-weight:600;
-}
-.solatext color2{
-    color: #4c9f83;
-	font-weight:600;
+.solatext color {
+	color: #F26C4F;
+	font-weight: 600;
 }
 
-.solatext color3{
-    color: #66a1ba;
-	font-weight:600;
+.solatext color1 {
+	color: #4c9f83;
+	font-weight: 600;
 }
 
+.solatext color2 {
+	color: #4c9f83;
+	font-weight: 600;
+}
 
+.solatext color3 {
+	color: #66a1ba;
+	font-weight: 600;
+}
 
 .uvsup {
-    font-size: 14px;
-    color: #F26C4F
+	font-size: 14px;
+	color: #F26C4F;
 }
+
 .uvtext {
-    color: #ccc;
-    float: left;
-    width: 150px;
-    margin-left: 120px;
-    margin-top: -80px;
-    font: 12px / 1em Helvetica, Helvetica, Arial, Helvetica
+	color: #ddd;
+	float: left;
+	width: 150px;
+	margin-left: 120px;
+	margin-top: -80px;
+	font: 12px / 1em Helvetica,Helvetica,Arial,Helvetica;
 }
-.uvtext color,
-.uvtext color2 {
-    font-size: 1em;
-    color: #F26C4F;
-	
+
+.uvtext color,.uvtext color2 {
+	font-size: 1em;
+	color: #F26C4F;
 }
+
 .uvfooter {
-    position: relative;
-    margin-top: 110px;
-    text-align: center
+	position: relative;
+	margin-top: 110px;
+	text-align: center;
 }
-.baromcircle,
+
+.baromcircle,.heatcircle {
+	position: absolute;
+	background: 0 0;
+}
+
 .heatcircle {
-    position: absolute;
-    background: 0 0
+	padding: 2px;
+	float: right;
+	margin-top: 0;
+	margin-left: 140px;
 }
-.heatcircle {
-    padding: 2px;
-    float: right;
-    margin-top: 0;
-    margin-left: 140px
-}
+
 .heatcircle-content {
-    color: #fff;
-    float: left;
-    margin-top: 0;
-    padding-top: 7%;
-    text-align: center;
-    width: 100%;
-    font: 400 13px / 1.2 Helvetica, Helvetica, Arial, Helvetica
+	color: #ddd;
+	float: left;
+	margin-top: 0;
+	padding-top: 7%;
+	text-align: center;
+	width: 100%;
+	font: 400 13px / 1.2 Helvetica,Helvetica,Arial,Helvetica;
 }
+
 .baromcircle-content {
-    float: left;
-    line-height: 1;
-    margin-top: -.9em;
-    padding-top: 50%;
-    text-align: center;
-    width: 100%;
-    color: #fff;
-    font-family: Helvetica, Helvetica, Arial, Helvetica;
-    font-weight: 900
+	float: left;
+	line-height: 1;
+	margin-top: -.9em;
+	padding-top: 50%;
+	text-align: center;
+	width: 100%;
+	color: #76797c;
+	font-family: Helvetica,Helvetica,Arial,Helvetica;
+	font-weight: 900;
 }
-supraindrop,
-supraindropw {
-    z-index: 9999999;
-    font: .4em weathertext, Helvetica, Arial
+
+supraindrop,supraindropw {
+	z-index: 9999999;
+	font: .4em weathertext,Helvetica,Arial;
 }
+
 .baromcircle {
-    border-radius: 50%;
-    height: 70px;
-    width: 70px;
-    padding: 2px;
-    float: right;
-    border-top: .1rem solid rgba(76, 59, 131, .1);
-    border-right: .1rem solid rgba(76, 59, 131, .1);
-    border-left: .1rem solid rgba(68, 59, 155, .1);
-    border-bottom: .1rem solid rgba(68, 145, 155, .1);
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -ms-background-size: cover;
-    background-size: cover;
-    margin-top: -32px;
-    margin-left: 212px
+	border-radius: 50%;
+	height: 70px;
+	width: 70px;
+	padding: 2px;
+	float: right;
+	border-top: .1rem solid rgba(76,59,131,.1);
+	border-right: .1rem solid rgba(76,59,131,.1);
+	border-left: .1rem solid rgba(68,59,155,.1);
+	border-bottom: .1rem solid rgba(68,145,155,.1);
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-ms-background-size: cover;
+	background-size: cover;
+	margin-top: -32px;
+	margin-left: 212px;
 }
+
 supraindrop {
-    color: #66a1ba
+	color: #66a1ba;
 }
+
 supraindropw {
-    color: #f8f8f8
+	color: #f8f8f8;
 }
+
 .rainfalltext color {
-    font-size: 1em;
-    color: #fff;
+	font-size: 1em;
+	color: #387791;
 }
-suprain,
-suprain1,
-suprain2 {
-    font-size: .4em;
-    font-weight: 800
+
+suprain,suprain1,suprain2 {
+	font-size: .4em;
+	font-weight: 800;
 }
+
 suprain {
-    color: #66a1ba
+	color: #66a1ba;
 }
+
 suprain1 {
-    color: #fff;
+	color: #ddd;
 }
+
 suprain2 {
-    color: #fff
+	color: #fff;
 }
+
 .chartforecast {
-    margin-left: 0;
-    font: normal 11px Helvetica, Arial, Helvetica;
-    position: absolute;
-     color:#fff;
-    margin-top: 174px;
-    width: 300px;
-    padding-top: 3px;
-    padding-left: 10px;
-    text-align: left;
-    font-family: "Helvetica", Helvetica, Arial, Helvetica;
+	margin-left: 0;
+	font: normal 11px Helvetica,Arial,Helvetica;
+	position: absolute;
+	color: #ddd;
+	margin-top: 174px;
+	width: 300px;
+	padding-top: 3px;
+	padding-left: 10px;
+	text-align: left;
+	font-family: "Helvetica",Helvetica,Arial,Helvetica;
 }
-.humidity,
-.windgustcircle,
-.windgustheadingcircle {
-    padding-top: 35px;
-    color: #fff;
+
+.humidity,.windgustcircle,.windgustheadingcircle {
+	padding-top: 35px;
+	color: #ddd;
 }
-.h2uv,
-.max,
-.sun {
-    text-align: center
+
+.h2uv,.max,.sun {
+	text-align: center;
 }
+
 a {
-    font-weight: 600;
-    font-family: 'weathertext', weathertext, Helvetica, Arial, Helvetica;
-     color:#fff;
-    font-size: 1em;
+	font-weight: 600;
+	font-family: 'weathertext',weathertext,Helvetica,Arial,Helvetica;
+	color: #ddd;
+	font-size: 1em;
 }
+
 .humidity {
-    font: 400 4em Helvetica, Helvetica, Arial, Helvetica
+	font: 400 4em Helvetica,Helvetica,Arial,Helvetica;
 }
+
 .windgustheading {
-     color:#fff;
-    font: 1em weathertext, Arial
+	color: #ddd;
+	font: 1em weathertext,Arial;
 }
+
 .windgustcircle {
-    position: absolute;
-    margin-top: 35px;
-    margin-left: -136px;
-    font: 20px Helvetica, Helvetica, Arial, Helvetica
+	position: absolute;
+	margin-top: 35px;
+	margin-left: -136px;
+	font: 20px Helvetica,Helvetica,Arial,Helvetica;
 }
+
 .windgustheadingcircle {
-    position: absolute;
-    margin-top: 14px;
-    margin-left: -125px;
-    font: 12px Helvetica, Helvetica, Arial, Helvetica
+	position: absolute;
+	margin-top: 14px;
+	margin-left: -125px;
+	font: 12px Helvetica,Helvetica,Arial,Helvetica;
 }
+
 .iconsize {
-    font-size: 0;
-    width: 50%;
-    height: 50%;
-    margin-left: 10px
+	font-size: 0;
+	width: 50%;
+	height: 50%;
+	margin-left: 10px;
 }
 
 /* start the homeweatherstation moon & sun info */
 .mooninfo {
-    margin-left: 120px;
-    font: 1em / 1.2em 'Helvetica', Helvetica, Arial, Helvetica;
-    margin-top: 100px;
-    padding: 0px;
-	padding-bottom:10px;
-	padding-top:100px;
-    border-radius: 4px;
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-	border-top: 1px solid rgba(255, 255, 255, 0.3);
-	width:auto;
-	 background-color: #383737;
-	height:270px;
-	
+	margin-left: 120px;
+	font: 1em / 1.2em Helvetica,Helvetica,Arial,Helvetica;
+	margin-top: 100px;
+	padding: 0;
+	padding-bottom: 10px;
+	padding-top: 100px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	border: 1px solid #777;
+	border-top: 1px solid #777;
+	width: auto;
+	background: none;
+	height: 280px;
 }
 
-
-
-.line{
-	margin-top:5px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-	margin-bottom:5px;
+.line {
+	margin-top: 5px;
+	border-bottom: 1px #777;
+	margin-bottom: 5px;
 }
 
 .mooninfo img {
-    margin-bottom: 3px
+	margin-bottom: 3px;
 }
+
 .mooncircle {
-    position: absolute;
-    color: #ccc;
-    top: 50px;
-    border-radius: 100%;
-    -moz-border-radius: 100%;
-    -webkit-border-radius: 100%;
-    height: 160px;
-    width: 160px;
-    margin-left: 165px;
-    border: 10px solid #5f6061;
-    padding-top: 10px;
-	font-size:26px;
-    background-color: #3d3d3d;
+	position: absolute;
+	color:#ccc;
+	top: 50px;
+	-moz-border-radius: 100%;
+	-webkit-border-radius: 100%;
+	border-radius: 100%;
+	height: 160px;
+	width: 160px;
+	margin-left: 165px;
+	border: 10px solid #777;
+	padding-top: 10px;
+	font-size: 26px;
+	 background-color: #3d3d3d;
 }
+
 .mooncircle span {
-    display: inline;
-    color: #ccc;
-    text-align: center;
-    font-family: 'weathertext', Helvetica, Arial, Helvetica;
-	font: 200 2.1em 'weathertext', Helvetica, Arial;
-	diplay:block;
-	text-align:center;
-	margin-left:0px
-	
+	display: inline;
+	color:#ccc;
+	text-align: center;
+	font-family: 'weathertext',Helvetica,Arial,Helvetica;
+	font: 200 2.1em weathertext,Helvetica,Arial;
+	display: block;
+	margin-left: 0;
 }
+
 .mooncircle moonhead {
-    position: absolute;
-    color: #f26c4f;
-    text-align: center;
-    font-size: 18px;
-	font-family: "HelveticaNeue", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    margin-top: 20px;
-    margin-left: -45px
+	position: absolute;
+	color: #f26c4f;
+	text-align: center;
+	font-size: 18px;
+	font-family: "HelveticaNeue","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+	margin-top: 20px;
+	margin-left: -45px;
 }
+
 .solar {
-    padding-left: 25px;
-    font: 2.8em weathertext, Helvetica, Arial
+	padding-left: 25px;
+	font: 2.8em weathertext,Helvetica,Arial;
 }
+
 .h2uv {
-    margin-top: 35px;
-    position: relative;
-    padding: 40px;
-    color: #;
-    border-radius: 100%;
-    width: 180px;
-    height: 180px;
-    background: 0 0;
-    background: linear-gradient(180deg, #068895 25%, #51b1a5 45%);
-    font: 4em Helvetica, Helvetica, Arial, Helvetica
+	margin-top: 35px;
+	position: relative;
+	padding: 40px;
+	border-radius: 100%;
+	width: 180px;
+	height: 180px;
+	background: 0 0;
+	background: linear-gradient(180deg,#068895 25%,#51b1a5 45%);
+	font: 4em Helvetica,Helvetica,Arial,Helvetica;
 }
-.luminance,
-.sun,
-.windir {
-     color:#ccc;
+
+.luminance,.sun,.windir {
+	color: #ddd;
 }
+
 .sun {
-    margin-left: 85px;
-    font: .9em / 1.3em Helvetica, Helvetica, Arial, Helvetica;
-    margin-top: 10px
+	margin-left: 85px;
+	font: .9em / 1.3em Helvetica,Helvetica,Arial,Helvetica;
+	margin-top: 10px;
 }
+
 .sun img {
-    margin-bottom: 3px
+	margin-bottom: 3px;
 }
+
 .luminance {
-    margin-top: 5px;
-    font-family: Helvetica, Helvetica, Arial, Helvetica;
-	font-size:13px;
-    line-height: 11px;
-	color:#f8f8f8;
+	margin-top: 5px;
+	font-family: Helvetica,Helvetica,Arial,Helvetica;
+	font-size: 13px;
+	line-height: 11px;color: #ddd;
 }
+
 .luminance:before {
-    content: "Luminance";
-    font-size: 13px;
-	font-family: Helvetica, Helvetica, Arial, Helvetica;
-    color: #66a1ba;
-    line-height:11px;margin-left:5px;
-	
+	content: "Luminance";
+	font-size: 13px;
+	font-family: Helvetica,Helvetica,Arial,Helvetica;
+	color: #f26c4f;
+	line-height: 11px;
+	margin-left: 5px;
 }
+
 .moonrise {
-    padding-top: 5px;
-    margin-top: -5px;
-    margin-left: -0px;
-    font-size: 0.9em ;
-	font-family: Helvetica, Helvetica, Arial, Helvetica;
-	color:#ddd;
+	padding-top: 5px;
+	margin-top: -5px;
+	margin-left: -0;
+	font-size: .9em;
+	font-family: Helvetica,Helvetica,Arial,Helvetica;
 }
+
 .moonset {
-    padding-top: 5px;
-    margin-top: -32px;
-    margin-left: 80px;
+	padding-top: 5px;
+	margin-top: -32px;
+	margin-left: 80px;
 }
+
 .luminance1 {
-    padding-top: 0px;
-    margin-top: 0px;
-    font: .9em Helvetica, Helvetica, Arial, Helvetica;
-    width: 300px;
-	color:#ddd;
+	padding-top: 0;
+	margin-top: 0;
+	font: .9em Helvetica,Helvetica,Arial,Helvetica;
+	width: 300px;
 }
+
 .luminance1:before {
-    content: "Phase";
-    font-family: Helvetica, Helvetica, Arial, Helvetica;
-    color: #66a1ba;
+	content: "Phase";
+	font-family: Helvetica,Helvetica,Arial,Helvetica;
+	color: #66a1ba;
 }
+
 .moon {
-     color:#ccc;
-    font: 600 .9em / .95em Helvetica, Helvetica, Arial, Helvetica
+	color: #ddd;
+	font: 600 .9em / .95em Helvetica,Helvetica,Arial,Helvetica;
 }
+
 .moon:before {
-    content: "";
-    color: #66a1ba;
-    font: .9em Helvetica, Helvetica, Arial, Helvetica
+	content: "";
+	color: #66a1ba;
+	font: .9em Helvetica,Helvetica,Arial,Helvetica;
 }
+
 .moon1 {
-     color:#ccc;
-    font: 600 .9em / .95em Helvetica, Helvetica, Arial, Helvetica
+	color: #ddd;
+	font: 600 .9em / .95em Helvetica,Helvetica,Arial,Helvetica;
 }
+
 .moon1:before {
-    content: "";
-    color: #66a1ba;
-    font: .9em Helvetica, Helvetica, Arial, Helvetica
+	content: "";
+	color: #66a1ba;
+	font: .9em Helvetica,Helvetica,Arial,Helvetica;
 }
-in,
-mb {
-    position: absolute;
-    background: 0 0;
-    font: .65em Helvetica, Helvetica, Arial, Helvetica
+
+in,mb {
+	position: absolute;
+	background: 0 0;
+	font: .65em Helvetica,Helvetica,Arial,Helvetica;
 }
+
 .moon img {
-    width: 20px;
-    height: 20px
+	width: 20px;
+	height: 20px;
 }
+
 /*homeweatherstation daylight canvas css */
- .daylight {
-  position:absolute;   
-  color:#ccc;
-  font-family: 'Helvetica';
-  text-align: center;
-  z-index:999;
-  top:50px;
-  margin-left:360px;
-  border:0px;
+.daylight {
+	position: absolute;
+	color: #fff;
+	font-family: 'Helvetica';
+	text-align: center;
+	z-index: 999;
+	top: 50px;
+	margin-left: 360px;
+	border: 0;
 }
+
 canvas {
-    display: block;
-    position:absolute;
-    top:0;
-    left:0;
-	border-radius:75%;
-	background:#777;
-	background:-moz-linear-gradient(45deg,#777, #444);
-	background:-webkit-linear-gradient(45degt,#777, #444);
-	background:-o-linear-gradient(45deg, #777, #444);
-	background:linear-gradient(45deg, #777, #444);	
-	z-index:-1;
-	border:0px;
-	width:160px;
-	font-family: "weathertext", Helvetica, Arial, "Lucida Grande", sans-serif;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-radius: 75%;
+	background: #777;
+	background: -moz-linear-gradient(45deg,#777,#444);
+	background: -webkit-linear-gradient(45degt,#777,#444);
+	background: -o-linear-gradient(45deg,#777,#444);
+	background: linear-gradient(45deg,#777,#444);
+	z-index: -1;
+	border: 0;
+	width: 160px;
+	font-family: "weathertext",Helvetica,Arial,"Lucida Grande",sans-serif;
+	-ms-transform: scale(.9999);
 	-moz-transform: scale(.9999);
 	-webkit-transform: scale(.9999);
 	-o-transform: scale(.9999);
@@ -2464,1471 +2473,1514 @@ canvas {
 }
 
 daylighthours:before {
-	position:absolute;
-    content:"Today Estimated";
-	font-size:12px;
-	margin-top:-20px; display:inline;
-	margin-left:2px;
-	font-family: "HelveticaNeue", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-	
+	position: absolute;
+	content: "Today Estimated";
+	font-size: 12px;
+	margin-top: -20px;
+	display: inline;
+	margin-left: 2px;
+	font-family: "HelveticaNeue","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
 }
 
 daylighthours {
-    color:#f8f8f8;
-    display:block;
-    line-height:160px;
-    text-align:center;
-    width:140px;
-    font-family:sans-serif;
-    font-size:26px;
-    font-weight:100;
-    margin-left:5px;
-	z-index:auto;
-	font-family: "weathertext", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-	
+	color: #f8f8f8;
+	display: block;
+	line-height: 160px;
+	text-align: center;
+	width: 140px;
+	font-size: 26px;
+	font-weight: 100;
+	margin-left: 5px;
+	z-index: auto;
+	font-family: "weathertext","Helvetica Neue Light",Helvetica,Arial,"Lucida Grande",sans-serif;
 }
 
 daylighthours:after {
-	position:absolute;
-    content:"of Daylight";
-	font-size:12px;
-	margin-top:20px; display:inline;
-	margin-left:-60px;
-	font-family: "HelveticaNeue", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	position: absolute;
+	content: "of Daylight";
+	font-size: 12px;
+	margin-top: 20px;
+	display: inline;
+	margin-left: -60px;
+	font-family: "HelveticaNeue","Helvetica Neue Light",Helvetica,Arial,"Lucida Grande",sans-serif;
 }
 
 /*start the sun hours */
 .sunpos {
-  position: relative;
-  margin-top:-21px;
+	position: relative;
+	margin-top: -21px;
 }
+
 .sunpos > div {
-  margin-left: 125px;
+	margin-left: 125px;
 }
 
 .sunpos-times {
-  margin-top: 40px;
-  width: 230px;
-  height: 60px;
-  border-bottom: 1rem thin #ccc;
-  overflow-y: hidden;
+	margin-top: 40px;
+	width: 230px;
+	height: 60px;
+	border-bottom: 1rem thin #ccc;
+	overflow-y: hidden;
 }
+
 .sunpos-times .sunpos-path {
-  margin-left: 25px;
-  width: 190px;
-  height: 190px;
-  overflow: hidden;
-  border: 1px dashed #777;
-  border-radius: 50%;
+	margin-left: 25px;
+	width: 190px;
+	height: 190px;
+	overflow: hidden;
+	border: 1px dashed #aaa;
+	border-radius: 50%;
 }
+
 .sunpos-times .sunpos-symbol-path {
-  position: absolute;
-  color: #f26c4f;
-  text-shadow: 0 0 0px black;
-  height: 15px;
-  -webkit-transition: -webkit-transform 2s linear;
-  -webkit-transform-origin: 50% 100%;
-  -webkit-transform: rotateZ(-75deg);
-  left: 70px;
-  bottom: 0;
+	position: absolute;
+	color: #f26c4f;
+	text-shadow: 0 0 0 #000;
+	height: 15px;
+	-webkit-transition: -webkit-transform 2s linear;
+	-moz-transition: -webkit-transform 2s linear;
+	-o-transition: -webkit-transform 2s linear;
+	-ms-transition: -webkit-transform 2s linear;
+	-webkit-transform-origin: 50% 100%;
+	-moz-transform-origin: 50% 100%;
+	-o-transform-origin: 50% 100%;
+	-ms-transform-origin: 50% 100%;
+	-webkit-transform: rotateZ(-75deg);
+	-moz-transform: rotateZ(-75deg);
+	-o-transform: rotateZ(-75deg);
+	-ms-transform: rotateZ(-75deg);
+	transform-origin: 50% 100%;
+	transform: rotateZ(-75deg);
+	left: 70px;
+	bottom: 0;
 }
+
 .sunpos-times .sunpos-symbol-path .symbol {
-  position: relative;
-  font-size: 16px;
-  top: -8px;
+	position: relative;
+	font-size: 16px;
+	top: -8px;
 }
+
 .sunpos-times .sunpos-animation {
-  width: 0px;
-  height: 160px;
-  background-color:#f26c4f;
-    -webkit-transition: width 2s linear;
-  transition: width 2s linear;
-  border-right:1px dashed #333;
+	width: 0;
+	height: 160px;
+	background-color: #f26c4f;
+	-webkit-transition: width 2s linear;
+	-moz-transition: width 2s linear;
+	-o-transition: width 2s linear;
+	-ms-transition: width 2s linear;
+	transition: width 2s linear;
+	border-right: 1px dashed #ccc;
 }
 
 .sunrisesunset {
-  position: absolute;
-  bottom: 0em;color:#ccc;
+	position: absolute;
+	bottom: -10px;
 }
+
 .sunrisesunset > div {
-  position: absolute;
-  font-size: 13px;
-  width: 120px;color:#ccc;
+	position: absolute;
+	font-size: 13px;
+	width: 120px;
 }
+
 .sunrisesunset .sunrise {
-  left: -15px;color:#ccc;
+	left: -15px;
 }
+
 .sunrisesunset .sunset {
-  left: 125px;color:#ccc;
+	left: 125px;
 }
 
 .firstlight {
-  position: absolute;
-  bottom: -1em;color:#ccc;
+	position: absolute;
+	bottom: -1em;
 }
+
 .firstlight > div {
-  position: absolute;
-  font-size: 13px;
-  width: 120px;color:#ccc;
+	position: absolute;
+	font-size: 13px;
+	width: 120px;
+	bottom: -30px;
 }
+
 .firstlight .sunrise {
-  left: -15px;
+	left: -15px;
 }
+
 .firstlight .sunset {
-  left: 125px;color:#ccc;
+	left: 125px;
 }
-
-
-
 
 .symbol {
-  
-  font-size: 10px;
-  
+	font-size: 10px;
 }
 
 /*end moon info */
-
-
-
 mb {
-    color: #66a1ba;
-    padding-top: 17px;
-    margin-left: -60px;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -ms-background-size: cover;
-    background-size: cover
-}
-in {
-    color: #F26C4F;
-    padding-top: 14px;
-    margin-left: -35px;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -ms-background-size: cover;
-    background-size: cover
-}
-wm2 {
-    color: #848688;
-    font: .4em Helvetica, Helvetica, Arial, Helvetica
-}
-.lo,
-.max {
-    color: #ccc
-}
-.max {
-    position: relative;
-    top:10px;
-    margin-left: 3px;
-    z-index: auto;
-    font: 600 .83em Helvetica, Helvetica, Arial, Helvetica
-}
-.lo {
-    position: absolute;
-    margin-top: 65px;
-    margin-left: 39px;
-    z-index: auto;
-    font: .9em Helvetica, Helvetica, Arial, Helvetica
-}
-.feels,
-.feels1 {
-    position: relative;
-    color:#ddd;
-    margin-left: auto;
-    text-align: center;
-    z-index: auto;
-}
-.feels {
-    margin-top: 45px;
-    font: 600 12px Helvetica, Helvetica, Arial, Helvetica
-}
-.feels1 {
-    margin-top: 30px;
-    font: .7em Helvetica, Helvetica, Arial, Helvetica
-}
-.windchillcircle,
-.windgustmphcircle,
-.windmphcircle {
-    position: absolute;
-    border-radius: 50%;
-    height: 65px;
-    border-top: .1rem solid rgba(76, 59, 131, .1);
-    border-right: .1rem solid rgba(76, 59, 131, .1);
-    border-left: .1rem solid rgba(68, 59, 155, .1);
-    border-bottom: .1rem solid rgba(68, 145, 155, .1)
-}
-.windchillcircle {
-    background: 0 0;
-    width: 65px;
-    padding: 2px;
-    float: right;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -ms-background-size: cover;
-    background-size: cover;
-    margin-top: -56px;
-    margin-left: 212px
-}
-.windchillcircle-content {
-    float: left;
-    line-height: 1;
-    margin-top: -.9em;
-    padding-top: 40%;
-    text-align: center;
-    width: 100%;
-    color: #676e73;
-    font-family: Helvetica, Helvetica, Arial, Helvetica;
-    -webkit-font-smoothing: antialiased
-}
-.windgustmphcircle-content,
-.windmphcircle-content {
-    float: left;
-    line-height: 1;
-     color:#ddd;
-    -webkit-font-smoothing: antialiased;
-    font-family: Helvetica, Helvetica, Arial, Helvetica;
-    text-align: center
-}
-.windmphcircle {
-    background: 0 0;
-    width: 65px;
-    padding: 2px;
-    float: left;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -ms-background-size: cover;
-    background-size: cover;
-    margin-top: -56px;
-    margin-left: 12px
-}
-.windmphcircle-content {
-    margin-top: -.9em;
-    padding-top: 40%;
-    width: 100%
-}
-.windgustmphcircle {
-    background: 0 0;
-    width: 65px;
-    padding: 2px;
-    float: left;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -ms-background-size: cover;
-    background-size: cover;
-    margin-top: -56px;
-    margin-left: 212px
-}
-#weekday,
-#wuforecast,
-#wuforecasts {
-    background-color: none;
-}
-.windgustmphcircle-content {
-    margin-top: -.9em;
-    padding-top: 40%;
-    width: 100%
-}
-.whitespace {
-    height: 45px
-}
-sup {
-    color: #828487
-}
-.sup {
-    font-size: .3em;
-    color: #913636
-}
-.suptemp {
-    font-size: 12px;
-    color:#ddd;
-    position: relative;
-    margin-bottom: 50px;
-    margin-right: 150px
-}
-#weekday,
-.a {
-    color:#ccc;
-}
-.iconh3,
-.outlook,
-.updatedtime {
-    position: absolute
-}
-.centered {
-    float: none;
-    margin-left: auto;
-    margin-right: auto
-}
-#wuforecasts {
-    max-width: 420px;
-    margin-left: 1px;
-    margin-right: 0;
-    font-family: Helvetica, Helvetica, Arial, Helvetica;
-    font-weight: 600; color:#ccc; background-color: #3d3d3d;
-}
-#wuforecast {
-    float: left;
-    width: 26%;
-    margin: -10px 0 0 15px;
-    font-family: Helvetica, Helvetica, Arial, Helvetica; color:#ddd; background-color: #3d3d3d;
+	color: #66a1ba;
+	padding-top: 17px;
+	margin-left: -60px;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-ms-background-size: cover;
+	background-size: cover;
 }
 
-#wuforecast:last-child,
-#wuforecast:nth-child(1n),
-#wuforecast:nth-child(2n),
-#wuforecast:nth-child(3n) {
-    margin-right: 0;
-    border-top: 1px solid #4c4f51;
-    border-right: 1px solid #4c4f51;
-    border-left: 1px solid #4c4f51;
-    border-bottom: 1px solid #4c4f51;
-    padding: 0px;
-    border-radius: 4px;
-    background-color: #3d3d3d;    
-    font-family: Helvetica, Helvetica, Arial, Helvetica;
-    height: 135px;
-    line-height: 15px;
+in {
+	color: #F26C4F;
+	padding-top: 14px;
+	margin-left: -35px;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-ms-background-size: cover;
+	background-size: cover;
 }
+
+wm2 {
+	color: #848688;
+	font: .4em Helvetica,Helvetica,Arial,Helvetica;
+}
+
+.lo,.max {
+	color: #fff;
+}
+
+.max {
+	position: relative;
+	margin-top: 0;
+	margin-left: 3px;
+	z-index: auto;
+	font: 600 .83em Helvetica,Helvetica,Arial,Helvetica;
+}
+
+.lo {
+	position: absolute;
+	margin-top: 65px;
+	margin-left: 39px;
+	z-index: auto;
+	font: .9em Helvetica,Helvetica,Arial,Helvetica;
+}
+
+.feels,.feels1 {
+	position: relative;
+	color: #fff;
+	margin-left: auto;
+	text-align: center;
+	z-index: auto;
+}
+
+.feels {
+	margin-top: 45px;
+	font: 600 12px Helvetica,Helvetica,Arial,Helvetica;
+}
+
+.feels1 {
+	margin-top: 30px;
+	font: .7em Helvetica,Helvetica,Arial,Helvetica;
+}
+
+.windchillcircle,.windgustmphcircle,.windmphcircle {
+	position: absolute;
+	border-radius: 50%;
+	height: 65px;
+	border-top: .1rem solid rgba(76,59,131,.1);
+	border-right: .1rem solid rgba(76,59,131,.1);
+	border-left: .1rem solid rgba(68,59,155,.1);
+	border-bottom: .1rem solid rgba(68,145,155,.1);
+}
+
+.windchillcircle {
+	background: 0 0;
+	width: 65px;
+	padding: 2px;
+	float: right;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-ms-background-size: cover;
+	background-size: cover;
+	margin-top: -56px;
+	margin-left: 212px;
+}
+
+.windchillcircle-content {
+	float: left;
+	line-height: 1;
+	margin-top: -.9em;
+	padding-top: 40%;
+	text-align: center;
+	width: 100%;
+	color: #676e73;
+	font-family: Helvetica,Helvetica,Arial,Helvetica;
+	-webkit-font-smoothing: antialiased;
+}
+
+.windgustmphcircle-content,.windmphcircle-content {
+	float: left;
+	line-height: 1;
+	color: #ddd;
+	-webkit-font-smoothing: antialiased;
+	font-family: Helvetica,Helvetica,Arial,Helvetica;
+	text-align: center;
+}
+
+.windmphcircle {
+	background: 0 0;
+	width: 65px;
+	padding: 2px;
+	float: left;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-ms-background-size: cover;
+	background-size: cover;
+	margin-top: -56px;
+	margin-left: 12px;
+}
+
+.windmphcircle-content {
+	margin-top: -.9em;
+	padding-top: 40%;
+	width: 100%;
+}
+
+.windgustmphcircle {
+	background: 0 0;
+	width: 65px;
+	padding: 2px;
+	float: left;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-ms-background-size: cover;
+	background-size: cover;
+	margin-top: -56px;
+	margin-left: 212px;
+}
+
+#weekday,#wuforecast,#wuforecasts {
+	background-color: none;
+}
+
+.windgustmphcircle-content {
+	margin-top: -.9em;
+	padding-top: 40%;
+	width: 100%;
+}
+
+.whitespace {
+	height: 45px;
+}
+
+sup {
+	color: #828487;
+}
+
+.sup {
+	font-size: .3em;
+	color: #913636;
+}
+
+.suptemp {
+	font-size: 12px;
+	color: #fff;
+	position: relative;
+	margin-bottom: 50px;
+	margin-right: 150px;
+}
+
+#weekday,.a {
+	color: #ddd;
+}
+
+.iconh3,.outlook,.updatedtime {
+	position: absolute;
+}
+
+.centered {
+	float: none;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#wuforecasts {
+	max-width: 420px;
+	margin-left: 1px;
+	margin-right: 0;
+	font-family: Helvetica,Helvetica,Arial,Helvetica;
+	font-weight: 600;
+}
+
+#wuforecast {
+	float: left;
+	width: 26%;
+	margin: -10px 0 0 15px;
+	font-family: Helvetica,Helvetica,Arial,Helvetica;
+}
+
+#wuforecast:last-child,#wuforecast:nth-child(1n),#wuforecast:nth-child(2n),#wuforecast:nth-child(3n) {
+	margin-right: 0;
+	border: 1px solid #555;
+	padding: 0;
+	border-radius: 4px;
+	background:none;
+	font-family: Helvetica,Helvetica,Arial,Helvetica;
+	height: 135px;
+	line-height: 15px;
+}
+
 #weekday {
-    margin: 0;
-    text-align: center;
-    padding: 3px;
-    font: 600 .8em Helvetica, Helvetica, Arial, Helvetica
+	margin: 0;
+	text-align: center;
+	padding: 3px;
+	font: 600 .8em Helvetica,Helvetica,Arial,Helvetica;
 }
-#temp,
-#temp2 {
-    font: 1em Helvetica, Helvetica, Arial, Helvetica
+
+#temp,#temp2 {
+	font: 1em Helvetica,Helvetica,Arial,Helvetica;
 }
+
 #temp {
-    color: #f26c4f !important;
+	color: #F26C4F;
 }
+
 #temp2 {
-    color: #66a1ba
+	color: #66a1ba;
 }
-.kmh,
-.rain {
-    padding-top: 5px;
-    font: .9em Helvetica, Helvetica, Arial, Helvetica
+
+.kmh,.rain {
+	padding-top: 5px;
+	font: .9em Helvetica,Helvetica,Arial,Helvetica;
 }
+
 #icon {
-    width: 55px;
-    height: 43px;
-    float: left;
-    padding: 5px;
-    margin: 0 10px 0 10px
+	width: 55px;
+	height: 43px;
+	float: left;
+	padding: 5px;
+	margin: 0 10px;
 }
+
 .wi-rotate-35 {
-    -webkit-transform: rotate(35deg);
-    -ms-transform: rotate(35deg);
-    transform: rotate(35deg)
+	-webkit-transform: rotate(35deg);
+	-ms-transform: rotate(35deg);
+	transform: rotate(35deg);
 }
+
 .wi-rotate-55 {
-    -webkit-transform: rotate(55deg);
-    -ms-transform: rotate(55deg);
-    transform: rotate(55deg)
+	-webkit-transform: rotate(55deg);
+	-ms-transform: rotate(55deg);
+	transform: rotate(55deg);
 }
+
 .wi-snow-wind:before {
-    content: "\f064"
+	content: "\f064";
 }
+
 .wi-snow:before {
-    content: "\f01b"
+	content: "\f01b";
 }
+
 .wi-smog:before {
-    content: "\f074"
+	content: "\f074";
 }
+
 .wi-smoke:before {
-    content: "\f062"
+	content: "\f062";
 }
+
 .wi-lightning:before {
-    content: "\f016"
+	content: "\f016";
 }
+
 .wi-dust:before {
-    content: "\f063"
+	content: "\f063";
 }
+
 .wi-snowflake-cold:before {
-    content: "\f076";
-    color: #66a1ba
+	content: "\f076";
+	color: #66a1ba;
 }
+
 .wi-snowflake1-cold:before {
-    content: "\f076";
-    color: #f8f8f8;
-    padding: 10px
+	content: "\f076";
+	color: #f8f8f8;
+	padding: 10px;
 }
+
 .wi-windy:before {
-    content: "\f021"
+	content: "\f021";
 }
+
 .wi-strong-wind:before {
-    content: "\f050"
+	content: "\f050";
 }
+
 .wi-sandstorm:before {
-    content: "\f082"
+	content: "\f082";
 }
+
 .wi-fire:before {
-    content: "\f0c7"
+	content: "\f0c7";
 }
+
 .wi-flood:before {
-    content: "\f07c"
+	content: "\f07c";
 }
+
 .outlook {
-    background-color: #3d3d3d;
-    border-radius: 4px;
-    padding: 15px;
-    margin-top: -380px;
-    
-    width: 600px;
-    margin-left: 4%
+	background:none;
+	border-radius: 4px;
+	padding: 15px;
+	margin-top: -380px;
+	box-shadow: 0 0 10px -4px rgba(0,0,0,.4);
+	width: 600px;
+	margin-left: 4%;
 }
-.outlook #dayicon,
-.outlook #nticon,
-.outlook #tomoicon {
-    background-size: 60px;
-    z-index: 1
+
+.outlook #dayicon,.outlook #nticon,.outlook #tomoicon {
+	background-size: 60px;
+	z-index: 1;
 }
+
 .outlook .with-badge:before {
-    content: "";
-    border: 20px solid #66a1ba;
-    position: absolute;
-    top: 0;
-    left: 0;
-    border-bottom-color: transparent;
-    border-right-color: transparent
+	content: "";
+	border: 20px solid #66a1ba;
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-bottom-color: transparent;
+	border-right-color: transparent;
 }
+
 .outlooktitle {
-    color: #F26C4F;
-    margin-top: 5px;
-    text-align: center;
-    font: 1.2em Helvetica, Helvetica, Arial, Helvetica
+	color: #F26C4F;
+	margin-top: 5px;
+	text-align: center;
+	font: 1.2em Helvetica,Helvetica,Arial,Helvetica;
 }
+
 .outlooktitle span {
-    color: #66a1ba;
-    font-family: Helvetica, Helvetica, Arial, Helvetica
+	color: #66a1ba;
+	font-family: Helvetica,Helvetica,Arial,Helvetica;
 }
-#day,
-#night,
-#tomo {
-     color:#ccc;
-    padding: 10px;
-    border-bottom: 1px solid #666;
-    text-align: left
+
+#day,#night,#tomo {
+	color: #ddd;
+	padding: 10px;
+	border-bottom: 1px solid #e9ebf1;
+	text-align: left;
 }
+
 #day {
-    font: 1.1em Helvetica, Helvetica, Arial, Helvetica
+	font: 1.1em Helvetica,Helvetica,Arial,Helvetica;
 }
-#day span,
-#tomo span {
-    color: #66a1ba;
-    font-family: Helvetica, Helvetica, Arial, Helvetica;
-    text-align: left
+
+#day span,#tomo span {
+	color: #66a1ba;
+	font-family: Helvetica,Helvetica,Arial,Helvetica;
+	text-align: left;
 }
-#night,
-#tomo {
-    margin-bottom: auto;
-    width: 90%;
-    font: 1.1em Helvetica, Helvetica, Arial, Helvetica
+
+#night,#tomo {
+	margin-bottom: auto;
+	width: 90%;
+	font: 1.1em Helvetica,Helvetica,Arial,Helvetica;
 }
+
 #night span {
-    color: #ff6861;
-    font-family: Helvetica, Helvetica, Arial, Helvetica;
-    text-align: left
+	color: #ff6861;
+	font-family: Helvetica,Helvetica,Arial,Helvetica;
+	text-align: left;
 }
+
 #chartdiv {
-    width: 100%;
-    height: 500px;background-color: #3d3d3d;
+	width: 100%;
+	height: 500px;
 }
+
 .iconh3 {
-     color:#ddd;
-    margin-top: 70px;
-    float: left;
-    margin-left: 35px;
-    width: 120px;
-    margin-bottom: 12px;
-    font: 600 .8em / 1.1em Helvetica, Helvetica, Arial, Helvetica
+	color: #ddd;
+	margin-top: 70px;
+	float: left;
+	margin-left: 35px;
+	width: 120px;
+	margin-bottom: 12px;
+	font: 600 .8em / 1.1em Helvetica,Helvetica,Arial,Helvetica;
 }
+
 .iconcurrent img {
-    width: 90px;
-    margin-top: 5px;
-    font-family: Helvetica, Arial;
-    font-weight: 500;
-    color: #4e5964;
-    float: left;
-    margin-left: 40px
+	width: 90px;
+	margin-top: 5px;
+	font-family: Helvetica,Arial;
+	font-weight: 500;
+	color: #4e5964;
+	float: left;
+	margin-left: 40px;
 }
+
 .wi {
-    display: inline-block;
-    font-family: weathericons;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1
+	display: inline-block;
+	font-family: weathericons;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 1;
 }
+
 .wi-fw {
-    text-align: center;
-    width: 1.4em
+	text-align: center;
+	width: 1.4em;
 }
+
 .wi-rotate-45 {
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg)
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
 }
+
 .wi-rotate-90 {
-    -webkit-transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
-    transform: rotate(90deg)
+	-webkit-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	transform: rotate(90deg);
 }
+
 .wi-rotate-180 {
-    -webkit-transform: rotate(180deg);
-    -ms-transform: rotate(180deg);
-    transform: rotate(180deg)
+	-webkit-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	transform: rotate(180deg);
 }
+
 .wi-rotate-270 {
-    -webkit-transform: rotate(270deg);
-    -ms-transform: rotate(270deg);
-    transform: rotate(270deg)
+	-webkit-transform: rotate(270deg);
+	-ms-transform: rotate(270deg);
+	transform: rotate(270deg);
 }
+
 .wi-flip-horizontal {
-    -webkit-transform: scale(-1, 1);
-    -ms-transform: scale(-1, 1);
-    transform: scale(-1, 1)
+	-webkit-transform: scale(-1,1);
+	-ms-transform: scale(-1,1);
+	transform: scale(-1,1);
 }
+
 .wi-flip-vertical {
-    -webkit-transform: scale(1, -1);
-    -ms-transform: scale(1, -1);
-    transform: scale(1, -1)
+	-webkit-transform: scale(1,-1);
+	-ms-transform: scale(1,-1);
+	transform: scale(1,-1);
 }
+
 .wi-raindrops:before {
-    content: "\f04e";
-    color: #66a1ba
+	content: "\f04e";
+	color: #66a1ba;
 }
+
 .wi-raindrop:before {
-    content: "\f078";
-    color: #66a1ba
+	content: "\f078";
+	color: #66a1ba;
 }
+
 .wi-na:before {
-    content: "\f07b"
+	content: "\f07b";
 }
+
 .wi-train:before {
-    content: "\f0cb"
+	content: "\f0cb";
 }
+
 .wi-moon-new:before {
-    content: "\f095";
-	color:#ccc;
+	content: "\f095";
 }
+
 .wi-moon-waxing-cresent-1:before {
-    content: "\f096";
-	color:#ccc;
+	content: "\f096";
 }
+
 .wi-moon-waxing-cresent-2:before {
-    content: "\f097";
-	color:#ccc;
+	content: "\f097";
 }
+
 .wi-moon-waxing-cresent-3:before {
-    content: "\f098"
+	content: "\f098";
 }
+
 .wi-moon-waxing-cresent-4:before {
-    content: "\f099"
+	content: "\f099";
 }
+
 .wi-moon-waxing-cresent-5:before {
-    content: "\f09a"
+	content: "\f09a";
 }
+
 .wi-moon-waxing-cresent-6:before {
-    content: "\f09b"
+	content: "\f09b";
 }
+
 .wi-moon-first-quarter:before {
-    content: "\f09c"
+	content: "\f09c";
 }
+
 .wi-moon-waxing-gibbous-1:before {
-    content: "\f09d"
+	content: "\f09d";
 }
+
 .wi-moon-waxing-gibbous-2:before {
-    content: "\f09e"
+	content: "\f09e";
 }
+
 .wi-moon-waxing-gibbous-3:before {
-    content: "\f09f"
+	content: "\f09f";
 }
+
 .wi-moon-waxing-gibbous-4:before {
-    content: "\f0a0"
+	content: "\f0a0";
 }
+
 .wi-moon-waxing-gibbous-5:before {
-    content: "\f0a1"
+	content: "\f0a1";
 }
+
 .wi-moon-waxing-gibbous-6:before {
-    content: "\f0a2"
+	content: "\f0a2";
 }
+
 .wi-moon-full:before {
-    content: "\f0a3"
+	content: "\f0a3";
 }
+
 .wi-moon-waning-gibbous-1:before {
-    content: "\f0a4"
+	content: "\f0a4";
 }
+
 .wi-moon-waning-gibbous-2:before {
-    content: "\f0a5"
+	content: "\f0a5";
 }
+
 .wi-moon-waning-gibbous-3:before {
-    content: "\f0a6"
+	content: "\f0a6";
 }
+
 .wi-moon-waning-gibbous-4:before {
-    content: "\f0a7"
+	content: "\f0a7";
 }
+
 .wi-moon-waning-gibbous-5:before {
-    content: "\f0a8"
+	content: "\f0a8";
 }
+
 .wi-moon-waning-gibbous-6:before {
-    content: "\f0a9"
+	content: "\f0a9";
 }
+
 .wi-moon-third-quarter:before {
-    content: "\f0aa"
+	content: "\f0aa";
 }
+
 .wi-moon-waning-crescent-1:before {
-    content: "\f0ab"
+	content: "\f0ab";
 }
+
 .wi-moon-waning-crescent-2:before {
-    content: "\f0ac"
+	content: "\f0ac";
 }
+
 .wi-moon-waning-crescent-3:before {
-    content: "\f0ad"
+	content: "\f0ad";
 }
+
 .wi-moon-waning-crescent-4:before {
-    content: "\f0ae"
+	content: "\f0ae";
 }
+
 .wi-moon-waning-crescent-5:before {
-    content: "\f0af"
+	content: "\f0af";
 }
+
 .wi-moon-waning-crescent-6:before {
-    content: "\f0b0"
+	content: "\f0b0";
 }
+
 .wi-moon-alt-new:before {
-    content: "\f0eb"
+	content: "\f0eb";
 }
+
 .wi-moon-alt-waxing-cresent-1:before {
-    content: "\f0d0";
-	
+	content: "\f0d0";
 }
+
 .wi-moon-alt-waxing-cresent-2:before {
-    content: "\f0d1"
+	content: "\f0d1";
 }
+
 .wi-moon-alt-waxing-cresent-3:before {
-    content: "\f0d2"
+	content: "\f0d2";
 }
+
 .wi-moon-alt-waxing-cresent-4:before {
-    content: "\f0d3"
+	content: "\f0d3";
 }
+
 .wi-moon-alt-waxing-cresent-5:before {
-    content: "\f0d4"
+	content: "\f0d4";
 }
+
 .wi-moon-alt-waxing-cresent-6:before {
-    content: "\f0d5"
+	content: "\f0d5";
 }
+
 .wi-moon-alt-first-quarter:before {
-    content: "\f0d6"
+	content: "\f0d6";
 }
+
 .wi-moon-alt-waxing-gibbous-1:before {
-    content: "\f0d7"
+	content: "\f0d7";
 }
+
 .wi-moon-alt-waxing-gibbous-2:before {
-    content: "\f0d8"
+	content: "\f0d8";
 }
+
 .wi-moon-alt-waxing-gibbous-3:before {
-    content: "\f0d9"
+	content: "\f0d9";
 }
+
 .wi-moon-alt-waxing-gibbous-4:before {
-    content: "\f0da"
+	content: "\f0da";
 }
+
 .wi-moon-alt-waxing-gibbous-5:before {
-    content: "\f0db"
+	content: "\f0db";
 }
+
 .wi-moon-alt-waxing-gibbous-6:before {
-    content: "\f0dc"
+	content: "\f0dc";
 }
+
 .wi-moon-alt-full:before {
-    content: "\f0dd"
+	content: "\f0dd";
 }
+
 .wi-moon-alt-waning-gibbous-1:before {
-    content: "\f0de"
+	content: "\f0de";
 }
+
 .wi-moon-alt-waning-gibbous-2:before {
-    content: "\f0df"
+	content: "\f0df";
 }
+
 .wi-moon-alt-waning-gibbous-3:before {
-    content: "\f0e0"
+	content: "\f0e0";
 }
+
 .wi-moon-alt-waning-gibbous-4:before {
-    content: "\f0e1"
+	content: "\f0e1";
 }
+
 .wi-moon-alt-waning-gibbous-5:before {
-    content: "\f0e2"
+	content: "\f0e2";
 }
+
 .wi-moon-alt-waning-gibbous-6:before {
-    content: "\f0e3"
+	content: "\f0e3";
 }
+
 .wi-moon-alt-third-quarter:before {
-    content: "\f0e4"
+	content: "\f0e4";
 }
+
 .wi-moon-alt-waning-crescent-1:before {
-    content: "\f0e5"
+	content: "\f0e5";
 }
+
 .wi-moon-alt-waning-crescent-2:before {
-    content: "\f0e6"
+	content: "\f0e6";
 }
+
 .wi-moon-alt-waning-crescent-3:before {
-    content: "\f0e7"
+	content: "\f0e7";
 }
+
 .wi-moon-alt-waning-crescent-4:before {
-    content: "\f0e8"
+	content: "\f0e8";
 }
+
 .wi-moon-alt-waning-crescent-5:before {
-    content: "\f0e9"
+	content: "\f0e9";
 }
+
 .wi-moon-alt-waning-crescent-6:before {
-    content: "\f0ea"
+	content: "\f0ea";
 }
+
 .wi-moon-0:before {
-    content: "\f095"
+	content: "\f095";
 }
+
 .wi-moon-1:before {
-    content: "\f096"
+	content: "\f096";
 }
+
 .wi-moon-2:before {
-    content: "\f097"
+	content: "\f097";
 }
+
 .wi-moon-3:before {
-    content: "\f098"
+	content: "\f098";
 }
+
 .wi-moon-4:before {
-    content: "\f099";
+	content: "\f099";
 }
+
 .wi-moon-5:before {
-    content: "\f09a"
+	content: "\f09a";
 }
+
 .wi-moon-6:before {
-    content: "\f09b"
+	content: "\f09b";
 }
+
 .wi-moon-7:before {
-    content: "\f09c"
+	content: "\f09c";
 }
+
 .wi-moon-8:before {
-    content: "\f09d"
+	content: "\f09d";
 }
+
 .wi-moon-9:before {
-    content: "\f09e"
+	content: "\f09e";
 }
+
 .wi-moon-10:before {
-    content: "\f09f"
+	content: "\f09f";
 }
+
 .wi-moon-11:before {
-    content: "\f0a0"
+	content: "\f0a0";
 }
+
 .wi-moon-12:before {
-    content: "\f0a1"
+	content: "\f0a1";
 }
+
 .wi-moon-13:before {
-    content: "\f0a2"
+	content: "\f0a2";
 }
+
 .wi-moon-14:before {
-    content: "\f0a3"
+	content: "\f0a3";
 }
+
 .wi-moon-15:before {
-    content: "\f0a4"
+	content: "\f0a4";
 }
+
 .wi-moon-16:before {
-    content: "\f0a5"
+	content: "\f0a5";
 }
+
 .wi-moon-17:before {
-    content: "\f0a6"
+	content: "\f0a6";
 }
+
 .wi-moon-18:before {
-    content: "\f0a7"
+	content: "\f0a7";
 }
+
 .wi-moon-19:before {
-    content: "\f0a8"
+	content: "\f0a8";
 }
+
 .wi-moon-20:before {
-    content: "\f0a9"
+	content: "\f0a9";
 }
+
 .wi-moon-21:before {
-    content: "\f0aa"
+	content: "\f0aa";
 }
+
 .wi-moon-22:before {
-    content: "\f0ab"
+	content: "\f0ab";
 }
+
 .wi-moon-23:before {
-    content: "\f0ac"
+	content: "\f0ac";
 }
+
 .wi-moon-24:before {
-    content: "\f0ad"
+	content: "\f0ad";
 }
+
 .wi-moon-25:before {
-    content: "\f0ae"
+	content: "\f0ae";
 }
+
 .wi-moon-26:before {
-    content: "\f0af"
+	content: "\f0af";
 }
+
 .wi-moon-27:before {
-    content: "\f0b0"
+	content: "\f0b0";
 }
 
 .wi-horizon-alt:before {
-    content: "\f046"
+	content: "\f046";
 }
+
 .wi-horizon:before {
-    content: "\f047"
+	content: "\f047";
 }
-.wi-sunrise:before,
-.wi-sunset:before {
-    content: "\f0a3"
+
+.wi-sunrise:before,.wi-sunset:before {
+	content: "\f0a3";
 }
+
 .wi-sunrise:before {
-    color: #cdac50
+	color: #cdac50;
 }
+
 .wi-sunset:before {
-    color: #F26C4F
+	color: #F26C4F;
 }
+
 .wi-moonrise:before {
-    content: "\f0c9";
-    color: #F26C4F;
+	content: "\f0c9";
+	color: #F26C4F;
 }
+
 .wi-moonset:before {
-    content: "\f0ca";
-    color: #66a1ba;
+	content: "\f0ca";
+	color: #66a1ba;
 }
 
 .wi-earthquake:before {
-    content: "\f0c6";
-    color: #ddd;
-	font-size:1.8em;
+	content: "\f0c6";
+	color: #fff;
+	font-size: 1.8em;
 }
+
 .wi-earthquake1:before {
-    content: "\f0c6";
-    color: #aaa;
-	font-size:1em;
+	content: "\f0c6";
+	color: #aaa;
+	font-size: 1em;
 }
+
 .wi-wind:before {
-    content: "\f0b1";
-    font-size: 1.2em;
-    vertical-align: text-bottom
+	content: "\f0b1";
+	font-size: 1.2em;
+	vertical-align: text-bottom;
 }
+
 .wi-wind.towards-45-deg {
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    transform: rotate(45deg)
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	transform: rotate(45deg);
 }
+
 .wi-wind.towards-90-deg {
-    -webkit-transform: rotate(90deg);
-    -moz-transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
-    -o-transform: rotate(90deg);
-    transform: rotate(90deg)
+	-webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+	transform: rotate(90deg);
 }
+
 .wi-wind.towards-225-deg {
-    -webkit-transform: rotate(225deg);
-    -moz-transform: rotate(225deg);
-    -ms-transform: rotate(225deg);
-    -o-transform: rotate(225deg);
-    transform: rotate(225deg)
+	-webkit-transform: rotate(225deg);
+	-moz-transform: rotate(225deg);
+	-ms-transform: rotate(225deg);
+	-o-transform: rotate(225deg);
+	transform: rotate(225deg);
 }
+
 .updatedtime {
-    margin-top: -15px;
-    width: 75px;
-    text-align: right;
-    margin-left: 220px;
-    color: #F26C4F;
-    font: 600 11px / 1em Helvetica, Helvetica, Arial, Helvetica
+	margin-top: -15px;
+	width: 75px;
+	text-align: right;
+	margin-left: 220px;
+	color: #F26C4F;
+	font: 600 11px / 1em Helvetica,Helvetica,Arial,Helvetica;
 }
+
 .updatedtime span {
-    margin-bottom: 0;
-     color:#ddd;
-    font-weight: 400;
-    font-family: Helvetica, Helvetica, Arial, Helvetica
+	margin-bottom: 0;
+	color: #ddd;
+	font-weight: 400;
+	font-family: Helvetica,Helvetica,Arial,Helvetica;
 }
+
 .updatedtimealert {
-    margin-top: 5px;
-    width: 75px;
-    text-align: right;
-    margin-left: 215px;
-    color: #F26C4F;
-    font: 600 11px / 1em Helvetica, Helvetica, Arial, Helvetica
+	margin-top: 5px;
+	width: 75px;
+	text-align: right;
+	margin-left: 215px;
+	color: #F26C4F;
+	font: 600 11px / 1em Helvetica,Helvetica,Arial,Helvetica;
 }
+
 .updatedtimealert span {
-    margin-bottom: 0;
-     color:#ddd;
-    font-weight: 400;
-    font-family: Helvetica, Helvetica, Arial, Helvetica
+	margin-bottom: 0;
+	color: #ddd;
+	font-weight: 400;
+	font-family: Helvetica,Helvetica,Arial,Helvetica;
 }
+
 .updatedtimedir {
-    margin-top: -25px;
-    width: 75px;
-    text-align: right;
-    margin-left: 135px;
-    position: absolute;
-    color: #F26C4F;
-    font: 600 11px / 1em Helvetica, Helvetica, Arial, Helvetica
+	margin-top: -25px;
+	width: 75px;
+	text-align: right;
+	margin-left: 135px;
+	position: absolute;
+	color: #F26C4F;
+	font: 600 11px / 1em Helvetica,Helvetica,Arial,Helvetica;
 }
-.average,
-.averageuv {
-    margin-top: 140px;
-    width: 75px;
-    text-align: right;
-    position: absolute
+
+.average,.averageuv {
+	margin-top: 140px;
+	width: 100px;
+	text-align: right;
+	position: absolute;
 }
+
+.averagetemp {
+	margin-top: -5px;
+	width: 100px;
+	text-align: center;
+	position: absolute;
+	margin-left: -2px;
+	color: #F26C4F;
+	font: 600 11px / 1em Helvetica,Helvetica,Arial,Helvetica;
+}
+
+.averagetemp span {
+	color: #ddd;
+	font: 400 10px / 1em Helvetica,Helvetica,Arial,Helvetica;
+	text-align: center;
+	margin-left: -5px;
+}
+
+.averagetemp span2 {
+	color: #ddd;
+}
+
 .updatedtimedir span {
-    margin-bottom: 0;
-     color:#ddd;
-    font-weight: 400;
-    font-family: Helvetica, Helvetica, Arial, Helvetica
+	margin-bottom: 0;
+	color: #ddd;
+	font-weight: 400;
+	font-family: Helvetica,Helvetica,Arial,Helvetica;
 }
+
 .average {
-    margin-left: 220px;
-    color: #F26C4F;
-    font: 600 11px / 1em Helvetica, Helvetica, Arial, Helvetica
+	margin-left: 180px;
+	color: #F26C4F;
+	font: 600 11px / 1em Helvetica,Helvetica,Arial,Helvetica;
 }
+
 .average span {
-    margin-bottom: 0;
-     color:#ddd;
-    font-weight: 400;
-    font-family: Helvetica, Helvetica, Arial, Helvetica
+	margin-bottom: 0;
+	color: #ddd;
+	font-weight: 400;
+	font-family: Helvetica,Helvetica,Arial,Helvetica;
 }
+
 .averageuv {
-    margin-left: -20px;
-    color: #F26C4F;
-    font: 600 11px / 1em Helvetica, Helvetica, Arial, Helvetica
+	margin-left: -20px;
+	color: #F26C4F;
+	font: 600 11px / 1em Helvetica,Helvetica,Arial,Helvetica;
 }
+
 .averageuv span {
-    margin-bottom: 0;
-     color:#ddd;
-    font-weight: 400;
-    font-family: Helvetica, Helvetica, Arial, Helvetica
+	margin-bottom: 0;
+	color: #ddd;
+	font-weight: 400;
+	font-family: Helvetica,Helvetica,Arial,Helvetica;
 }
+
 .averageindoor {
-    margin-left: 255px;
-    color: #ccc;
-    font: normal 11px / 1em Helvetica, Helvetica, Arial, Helvetica;
-    position: absolute;
-    margin-top: 43px;
-    width: 85px;
+	margin-left: 255px;
+	color:#ddd;;
+	font: normal 11px / 1em Helvetica,Helvetica,Arial,Helvetica;
+	position: absolute;
+	margin-top: 43px;
+	width: 85px;
 }
+
 .averageindoor span {
-    margin-bottom: 0;
-     color:#ddd;
-    font-weight: 400;
-    font-family: Helvetica, Helvetica, Arial, Helvetica
+	margin-bottom: 0;
+	color: #ddd;
+	font-weight: 400;
+	font-family: Helvetica,Helvetica,Arial,Helvetica;
 }
+
 .humidityindoor {
-    margin-left: 160px;
-    color: #F26C4F;
-    font: 600 11px / 1em Helvetica, Helvetica, Arial, Helvetica;
-    position: absolute;
-    margin-top: 60px;
-    width: 185px;
+	margin-left: 160px;
+	color: #F26C4F;
+	font: 600 11px / 1em Helvetica,Helvetica,Arial,Helvetica;
+	position: absolute;
+	margin-top: 60px;
+	width: 185px;
 }
+
 .humidityindoor span {
-    margin-bottom: 0;
-     color:#ddd;
-    font-weight: 400;
-    font-family: Helvetica, Helvetica, Arial, Helvetica
+	margin-bottom: 0;
+	color: #ddd;
+	font-weight: 400;
+	font-family: Helvetica,Helvetica,Arial,Helvetica;
 }
+
 .averagehindoor {
-    margin-left: 260px;
-    color: #F26C4F;
-    font: 600 11px / 1em Helvetica, Helvetica, Arial, Helvetica;
-    position: absolute;
-    margin-top: 45px;
-    width: 75px;
+	margin-left: 260px;
+	color: #F26C4F;
+	font: 600 11px / 1em Helvetica,Helvetica,Arial,Helvetica;
+	position: absolute;
+	margin-top: 45px;
+	width: 75px;
 }
+
 .averagehindoor span {
-    margin-bottom: 0;
-     color:#ddd;
-    font-weight: 400;
-    font-family: Helvetica, Helvetica, Arial, Helvetica
+	margin-bottom: 0;
+	color: #ddd;
+	font-weight: 400;
+	font-family: Helvetica,Helvetica,Arial,Helvetica;
 }
+
 .averagedir {
-    margin-left: 130px;
-    margin-top: 130px;
-    width: 75px;
-    text-align: right;
-    position: absolute;
-    color: #F26C4F;
-    font: 600 11px / 1em Helvetica, Helvetica, Arial, Helvetica
+	margin-left: 130px;
+	margin-top: 130px;
+	width: 75px;
+	text-align: right;
+	position: absolute;
+	color: #F26C4F;
+	font: 600 11px / 1em Helvetica,Helvetica,Arial,Helvetica;
 }
-.windalarm,
-.windcondition {
-    width: 100px;
-    text-align: left
+
+.windalarm,.windcondition {
+	width: 100px;
+	text-align: left;
 }
+
 .averagedir span {
-    margin-bottom: 0;
-     color:#ddd;
-    font-weight: 400;
-    font-family: Helvetica, Helvetica, Arial, Helvetica
+	margin-bottom: 0;
+	color: #ddd;
+	font-weight: 400;
+	font-family: Helvetica,Helvetica,Arial,Helvetica;
 }
+
 .windicons {
-    font-size: 0;
-    position: absolute;
-    margin-top: 75px;
-    margin-left: 133px;
-    background: none;
-    border-top: 1px solid #5f6061;
-    border-right: 1px solid #5f6061;
-    border-left: 1px solid #5f6061;
-    border-bottom: 1px solid #5f6061;
-    border-radius: 75%;
-    padding: 3px
+	font-size: 0;
+	position: absolute;
+	margin-top: 75px;
+	margin-left: 135px;
+	background:none;
+	border: 3px solid #777;
+	border-radius: 75%;
+	padding: 3px;
 }
+
 .windcondition {
-    margin-top: -25px;
-    margin-left: 65px;
-    position: absolute;
-     color:#ddd;
-    font: 600 9px / 1em Helvetica, Helvetica, Arial, Helvetica
+	margin-top: -25px;
+	margin-left: 65px;
+	position: absolute;
+	color: #ddd;
+	font: 600 9px / 1em Helvetica,Helvetica,Arial,Helvetica;
 }
+
 .windcondition span {
-    margin-bottom: 0;
-     color:#ddd;
-    font-weight: 600;
-    font-family: Helvetica, Helvetica, Arial, Helvetica
+	margin-bottom: 0;
+	color: #ddd;
+	font-weight: 600;
+	font-family: Helvetica,Helvetica,Arial,Helvetica;
 }
+
 .windalarm {
-    margin-top: -26px;
-    margin-left: 185px;
-    position: absolute;
-     color:#ddd;
-    font: 600 9px / 1em Helvetica, Helvetica, Arial, Helvetica
+	margin-top: -26px;
+	margin-left: 185px;
+	position: absolute;
+	color: #ddd;
+	font: 600 9px / 1em Helvetica,Helvetica,Arial,Helvetica;
 }
-.gustspeedtrend,
-.windspeedtrend {
-    margin-top: 25px;
-    width: 100px;
-    text-align: right;
-    position: absolute
+
+.gustspeedtrend,.windspeedtrend {
+	margin-top: 25px;
+	width: 100px;
+	text-align: right;
+	position: absolute;
 }
+
 .windalarm span {
-    margin-bottom: 0;
-     color:#ddd;
-    font-weight: 600;
-    font-family: Helvetica, Helvetica, Arial, Helvetica
+	margin-bottom: 0;
+	color: #ddd;
+	font-weight: 600;
+	font-family: Helvetica,Helvetica,Arial,Helvetica;
 }
+
 .gustspeedtrend {
-    margin-left: 140px;
-    color: #F26C4F;
-    font: 600 11px / 1em Helvetica, Helvetica, Arial, Helvetica
+	margin-left: 150px;
+	color: #F26C4F;
+	font: 600 11px / 1em Helvetica,Helvetica,Arial,Helvetica;
 }
+
 .gustspeedtrend span {
-    margin-bottom: 0;
-     color:#ddd;
-    font-weight: 600;
-    font-family: Helvetica, Helvetica, Arial, Helvetica
+	margin-bottom: 0;
+	color: #ddd;
+	font-weight: 600;
+	font-family: Helvetica,Helvetica,Arial,Helvetica;
 }
+
 .windspeedtrend {
-    margin-left: 15px;
-    color: #F26C4F;
-    font: 600 11px / 1em Helvetica, Helvetica, Arial, Helvetica
+	margin-left: 15px;
+	color: #F26C4F;
+	font: 600 11px / 1em Helvetica,Helvetica,Arial,Helvetica;
 }
+
 .windspeedtrend span {
-    margin-bottom: 0;
-     color:#ddd;
-    font-weight: 600;
-    font-family: Helvetica, Helvetica, Arial, Helvetica
-}
-/*begin wind direction */
-
-.windirection {
-    margin: 10px 0 0 85px;
-    width: 100%;
-}
-.homeweatherstationcompass {
-    width: 130px;
-    position: absolute;
-    font-family: Helvetica;
-    color: #ccc;
-	background-color: #3d3d3d;
-}
-.homeweatherstationcompass:after {
-    content: "IDESIGN34©";
-    position: absolute;
-    bottom: 18px;
-    margin-left: -22px;
-    background: none;
-    color: rgba(204, 204, 204, 0.3);
-    font: normal 7px / 7px Helvetica, Helvetica, Arial;
-}
-.windcaption {
-    position: absolute;
-    margin-top: -65px;
-    margin-left: 40px;
-    background: none;
-    width: 50px;
-    line-height: 10px;
-    text-align: center;
-}
-.windcaption:after {
-    content: "Wind  Bearing";
-    display: inline;
-    color: rgba(204, 204, 204, 0.8);
-    font: 600 10px / 10px Helvetica, Helvetica, Arial;
+	margin-bottom: 0;
+	color: #ddd;
+	font-weight: 600;
+	font-family: Helvetica,Helvetica,Arial,Helvetica;
 }
 
-.windirectionwords {
-    display: block;
-    position: absolute;
-     color:#ccc;
-    margin-left: 0px;
-    margin-top: 75px;
-    text-align: center;
-    font-family: "Helvetica", Arial, "Lucida Grande", sans-serif;
-    font-weight: 600;
-    line-height: 12px;
-    font-size: 0.9em;
-    width: 130px;
-    z-index: auto;
+hr,img {
+	border: 0;
 }
-.windirectionwords span {
-    color: #F26C4F
-}
-.homeweatherstationcompass .direction {
-    width: 130px;
-    height: 130px;
-    border-radius: 100%;
-    -webkit-border-radius: 100%;
-    -moz-border-radius: 100%;
-    -o-border-radius: 100%;
-    border-left: 8px solid rgba(95, 96, 97, .5);
-    border-top: 8px solid rgba(95, 96, 97, 0.8);
-    border-right: 8px solid rgba(95, 96, 97, .5);
-    border-bottom: 8px solid rgba(95, 96, 97, 0.8);
-}
-/*dont use for now
-.homeweatherstationcompass:before {
-	font-family:'FontAwesome';
-    content: "\f0ec";    
-    position: absolute;
-    top: 17px;
-	margin-left:-22px;
-    z-index: 0;
-    background: none;
-	color:rgba(102,161,186,0.3);
-	width:50px;
-	line-height:11px;
-	
-}
-*/
 
+body,figure {
+	margin: 0;
+}
 
-.homeweatherstationcompass .direction:after {
-    content: "";
-    width: 15px;
-    height: 15px;
-    border: 5px solid #F26C4F;
-    border-radius: 100%;
-    -webkit-border-radius: 100%;
-    -moz-border-radius: 100%;
-    -o-border-radius: 100%;
-    position: absolute;
-    top: 0px;
-    left: 50%;
-    margin-left: -5px;
-    z-index: 99;
-    background: none
+sub,sup {
+	position: relative;
+	font-size: 75%;
+	line-height: 0;
+	vertical-align: baseline;
 }
-/*end wind direction */
 
-hr,
-img {
-    border: 0
-}
-body,
-figure {
-    margin: 0
-}
-sub,
 sup {
-    position: relative;
-    font-size: 75%;
-    line-height: 0;
-    vertical-align: baseline
+	top: -.5em;
 }
-sup {
-    top: -.5em
-}
+
 sub {
-    bottom: -.25em
+	bottom: -.25em;
 }
+
 hr {
-    height: 0;
-    -webkit-box-sizing: content-box;
-    -moz-box-sizing: content-box;
-    -o-box-sizing: border-box;
-    box-sizing: content-box
+	height: 0;
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	-o-box-sizing: border-box;
+	box-sizing: content-box;
 }
+
 html {
-    font-family: "Helvetica", Helvetica, Arial, Helvetica;
+	font-family: "Helvetica",Helvetica,Arial,Helvetica;
 }
+
 body {
-    font-family: "Helvetica", Helvetica, Arial, Helvetica;
-    font-size: 14px;
-    line-height: 1.42857143;
-    color:#ddd;
+	font-family: "Helvetica",Helvetica,Arial,Helvetica;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #ddd;
 }
+
 a {
-    color: #428bca;
-    text-decoration: none;
-    font-family: "Helvetica", Helvetica, Arial, Helvetica;
+	color: #428bca;
+	text-decoration: none;
+	font-family: "Helvetica",Helvetica,Arial,Helvetica;
 }
+
 hr {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border-top: 1px solid #eee
+	margin-top: 20px;
+	margin-bottom: 20px;
+	border-top: 1px solid #eee;
 }
-.h2,
-.h3,
-.h4,
-.h5,
-.h6,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: inherit;
-    font-weight: normal;
-    line-height: 1.1;
-    color: inherit
+
+.h2,.h3,.h4,.h5,.h6,h1,h2,h3,h4,h5,h6 {
+	font-family: inherit;
+	font-weight: 400;
+	line-height: 1.1;
+	color: inherit;
 }
-.h2 .small,
-.h2 small,
-.h3 .small,
-.h3 small,
-.h4 .small,
-.h4 small,
-.h5 .small,
-.h5 small,
-.h6 .small,
-.h6 small,
-h1 .small,
-h1 small,
-h2 .small,
-h2 small,
-h3 .small,
-h3 small,
-h4 .small,
-h4 small,
-h5 .small,
-h5 small,
-h6 .small,
-h6 small {
-    font-weight: normal;
-    line-height: 1;
-     color:#ddd;
+
+.h2 .small,.h2 small,.h3 .small,.h3 small,.h4 .small,.h4 small,.h5 .small,.h5 small,.h6 .small,.h6 small,h1 .small,h1 small,h2 .small,h2 small,h3 .small,h3 small,h4 .small,h4 small,h5 .small,h5 small,h6 .small,h6 small {
+	font-weight: 400;
+	line-height: 1;
+	color: #ddd;
 }
-.h1,
-.h2,
-.h3,
-h1,
-h2,
-h3 {
-    margin-top: 20px;
-    margin-bottom: 10px
+
+.h1,.h2,.h3,h1,h2,h3 {
+	margin-top: 20px;
+	margin-bottom: 10px;
 }
-.h1 .small,
-.h1 small,
-.h2 .small,
-.h2 small,
-.h3 .small,
-.h3 small,
-h1 .small,
-h1 small,
-h2 .small,
-h2 small,
-h3 .small,
-h3 small {} .h4,
-.h5,
-.h6,
-h4,
-h5,
-h6 {
-    margin-top: 10px;
-    margin-bottom: 10px
+
+.h1 .small,.h1 small,.h2 .small,.h2 small,.h3 .small,.h3 small,h1 .small,h1 small,h2 .small,h2 small,h3 .small,h3 small {
 }
-.h4 .small,
-.h4 small,
-.h5 .small,
-.h5 small,
-.h6 .small,
-.h6 small,
-h4 .small,
-h4 small,
-h5 .small,
-h5 small,
-h6 .small,
-h6 small {}
-/* homeweatherstation beta css for mobile devices */
+
+.h4,.h5,.h6,h4,h5,h6 {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.h4 .small,.h4 small,.h5 .small,.h5 small,.h6 .small,.h6 small,h4 .small,h4 small,h5 .small,h5 small,h6 .small,h6 small {
+}
 
 /* homeweatherstation beta css for mobile devices */
-@media screen  and (max-width: 768px) /* Tablet */ {
-	
+/* Tablet */
+@media screen and (max-width: 768px) {
 	.weather-container {
-        display: inline;
-        width: 300px;
-        height: 200px;
-        background-color: none;
-        margin: 5px auto;
-        font-family: "Helvetica", Helvetica, Arial, Helvetica;
-		overflow:hidden;
-    }
-    .weather-item {
-        float: none;
-        width: 310px;
-        margin-left: 1px;
-        margin-top: 10px;
-		overflow:hidden; /*scrolling overflow hidden keeping height correct for small devices */
-    }
-    .homeweathernotifications {
-        display: none
-    }
-    .homeweathernotify {
-        display: none
-    }
-    .chart,
-    .chart,
-    .charttemperature,
-    .chartforecast,
-    .a,
-    .chartbarometer,
-    .chartdeprem,
-    .chartdirection,
-    .chartrainfall,
-    .chartsky,
-    .chartsolar,
-    .chartwindspeed,
-    .weather2-container,
-    .weatherfooter-container {
-        display: none
-    }
-    header {
-        display: none;
-    }
-   
-    #icon {
-        width: 55px;
-        height: 43px;
-        float: left;
-        padding: 5px;
-        margin: 0px 0px 0 10px
-    }
-  
-}
+		display: inline;
+		width: 300px;
+		height: 200px;
+		background-color: none;
+		margin: 5px auto;
+		font-family: "Helvetica",Helvetica,Arial,Helvetica;
+		overflow: hidden;
+	}
 
+	.weather-item {
+		float: none;
+		width: 310px;
+		margin-left: 1px;
+		margin-top: 10px;
+		overflow: hidden;
+	/*scrolling overflow hidden keeping height correct for small devices */
+	}
+
+	.homeweathernotifications {
+		display: none;
+	}
+
+	.homeweathernotify {
+		display: none;
+	}
+
+	.chart,.chart,.charttemperature,.chartforecast,.a,.chartbarometer,.chartdeprem,.chartdirection,.chartrainfall,.chartsky,.chartsolar,.chartwindspeed,.weather2-container,.weatherfooter-container {
+		display: none;
+	}
+
+	header {
+		display: none;
+	}
+
+	#icon {
+		width: 55px;
+		height: 43px;
+		float: left;
+		padding: 5px;
+		margin: 0 0 0 10px;
+	}
+}
 
 :-webkit-full-screen {
-    background: white;
+	background:none;
 }
-:-moz-full-screen {
-    background: white;
-}
-:-ms-fullscreen {
-    background: white;
-}
-:full-screen {
-    /*pre-spec */
-    
-    background: white;
-}
-:fullscreen {
-    /* spec */
-    
-    background: white;
-}
-.homeweatherinfo {
-    width: 230px;
-    height: 70px;
-    transform: translate(40px, -45px);
-    padding: 10px;
-    font-family: 'weathertext', Helvetica, sans-serif;
-}
-.homeweatherinfo span:first-child {
-    display: block;
-    color: #f26c4f;
-    font-weight: 600;
-    font-size: 15px;
-    font-family: 'weathertext', Helvetica, sans-serif;
-}
-.homeweatherinfo span:last-child {
-    color: #919191;
-    font-size: 13px;
-    font-family: 'weathertext', Helvetica, sans-serif;
-}
-.homeweatherinfo span a {
-    color: #545454;
-    text-decoration: none;
-    font-weight: 600;
-    font-family: 'weathertext', Helvetica, sans-serif;
-}
-/*notifications homeweather station*/
 
+:-moz-full-screen {
+	background:none;
+}
+
+:-ms-fullscreen {
+	background:none;
+}
+
+:full-screen {
+/*pre-spec */
+	background:none;
+}
+
+:fullscreen {
+/* spec */
+	background:none;
+}
+
+.homeweatherinfo {
+	width: 230px;
+	height: 70px;
+	transform: translate(40px,-45px);
+	padding: 10px;
+	font-family: 'weathertext',Helvetica,sans-serif;
+}
+
+.homeweatherinfo span:first-child {
+	display: block;
+	color: #f26c4f;
+	font-weight: 600;
+	font-size: 15px;
+	font-family: 'weathertext',Helvetica,sans-serif;
+}
+
+.homeweatherinfo span:last-child {
+	color: #919191;
+	font-size: 13px;
+	font-family: 'weathertext',Helvetica,sans-serif;
+}
+
+.homeweatherinfo span a {
+	color: #545454;
+	text-decoration: none;
+	font-weight: 600;
+	font-family: 'weathertext',Helvetica,sans-serif;
+}
+
+/*notifications homeweather station*/
 .homeweathernotify {
-    width: 300px;
-    height: 65px;
-    background-color: none;
-    border-radius: 4px;
-    overflow: hidden;
-    cursor: pointer;
-    margin: -25px 0px 0px 45px;
-    font-family: "HelveticaNeue", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	width: 300px;
+	height: 65px;
+	background-color: none;
+	border-radius: 4px;
+	overflow: hidden;
+	cursor: pointer;
+	margin: -25px 0 0 45px;
+	font-family: "HelveticaNeue","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
 }
-.homeweathernotify h3 {
-    font-size: 16px;
-    font-weight: normal;
-    font-family: "HelveticaNeue", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-}
+
 .homeweathernotify hv {
-    font-size: 26px;
-    font-weight: 600;
-    font-family: "weathertext", Helvetica, Arial, "Lucida Grande", sans-serif;
-    color: #f26c4f;
-    font-weight: normal;
+	font-size: 20px;
+	font-weight: 400;
+	font-family: "weathertext",Helvetica,Arial,"Lucida Grande",sans-serif;
+	color: #f26c4f;
 }
+
 .homeweathernotify hvempty {
-    font-size: 20px;
-    font-family: "HelveticaNeue", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    color: #ccc;
-    font-weight: normal;
-    margin-left: 25px;
-    top: 25px;
+	font-size: 20px;
+	font-family: "HelveticaNeue","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+	color: #878a8c;
+	font-weight: 400;
+	margin-left: 25px;
+	top: 25px;
 }
+
 .homeweathernotify hvcold {
-    font-size: 26px;
-    font-weight: 600;
-    font-family: "weathertext", Helvetica, Arial, "Lucida Grande", sans-serif;
-    color: #66a1ba;
-    font-weight: normal;
+	font-size: 20px;
+	font-family: "weathertext",Helvetica,Arial,"Lucida Grande",sans-serif;
+	color: #66a1ba;
+	font-weight: 400;
 }
+
 .homeweathernotify hv10 {
-    font-size: 26px;
-    font-weight: 600;
-    font-family: "weathertext", Helvetica, Arial, "Lucida Grande", sans-serif;
-    color: #8560a8;
-    font-weight: normal;
+	font-size: 26px;
+	font-family: "weathertext",Helvetica,Arial,"Lucida Grande",sans-serif;
+	color: #8560a8;
+	font-weight: 400;
 }
+
 .homeweathernotify span {
-    margin-top: 25px;
-    font-size: 12px;
-    font-family: "HelveticaNeue", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	margin-top: 25px;
+	font-size: 12px;
+	font-family: "HelveticaNeue","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
 }
 
 .homeweathernotify description {
-	position:absolute;
-    margin-top: 20px;
-	margin-left:2px;
-    font-size: 13px;
-	line-height:12px;
-    font-family: "HelveticaNeue", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-	
+	position: absolute;
+	margin-top: 20px;
+	margin-left: 2px;
+	font-size: 13px;
+	line-height: 12px;
+	font-family: "HelveticaNeue","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
 }
 
 .homeweathernotify colder {
-	color: #66a1ba;	
+	color: #66a1ba;
 }
 
-.homeweathernotify warmer{
-	color: #f26c4f;	
+.homeweathernotify warmer {
+	color: #f26c4f;
 }

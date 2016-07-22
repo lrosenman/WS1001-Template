@@ -1,5 +1,4 @@
-<?php
-include_once('livedata.php');?>
+<?php include('livedata.php');?>
 <div class="updatedtime"><span>Updated</span> <?php 
  echo $update;
 ?> </div>
@@ -75,14 +74,13 @@ include_once('livedata.php');?>
 
 
 #beaker {
-  border: 5px solid rgba(233, 235, 233, 1);
+  border: 5px solid #ddd;
   border-top: 0;
   border-radius: 5px 5px 5px 5px;
   height: 120px;
   left: 50px;
   bottom: 0;
-  width: 125px;
-  
+  width: 125px;  
   background-image:url(css/rain/marker.png);
   background-repeat:no-repeat;
   
@@ -91,7 +89,7 @@ include_once('livedata.php');?>
 
 #beaker:before,
 #beaker:after {
-  border: 5px solid rgba(233, 235, 233, 1);
+  border: 5px solid #ddd;
   border-bottom: 0;
   border-radius: 5px;
   content: '';
@@ -107,7 +105,7 @@ include_once('livedata.php');?>
 #raintoday {
   background-color: #66a1ba;
   border: 1px solid #66a1ba;
-  border-radius: 0 0 10px 10px;
+  border-radius: 0 0 1px 1px;
   bottom: 0;
   width: 115px;
   margin-left:55px;
@@ -116,29 +114,18 @@ include_once('livedata.php');?>
  
 }
 
-#raintoday:after {
-  background-color: rgba(255, 255, 255, 0.15);
-  bottom: 0px;
-  content: '';
-  height: 200px;
-  left: -40px;
-  position: absolute;
-  transform: rotate(30deg);
-  -webkit-transform: rotate(15deg);
-  width: 120px;
-  
-}
+
 
 /*month*/
 .maxrainfallmonth{position:absolute;background:none;border-radius:100%;height:60px;width:60px;padding:2px;float:right;
-border:1px solid rgba(68, 145, 155, 0.2);
+border:2px solid rgba(233, 235, 241, 1);
 margin-top:10px;
 margin-left:210px}
 .maxrainfallmonth-content{float:left;line-height:1;margin-top:-7px;padding-top:30%;text-align:center;width:100%;color:#676e73;
 font-family:"Helvetica", Arial;font-size:0.8em}
 /*year*/
 .maxrainfallyear{position:absolute;background:none;border-radius:100%;height:60px;width:60px;padding:2px;float:right;
-border:1px solid rgba(68, 145, 155, 0.2);
+border:2px solid rgba(233, 235, 241, 1);
 margin-top:60px;
 margin-left:-5px}
 .maxrainfallyear-content{float:left;line-height:1;margin-top:-7px;padding-top:30%;text-align:center;
