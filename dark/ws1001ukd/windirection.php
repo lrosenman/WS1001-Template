@@ -1,6 +1,10 @@
-<?php
-include_once('livedata.php');?>
+<?php include('livedata.php');?>
 <style>
+/* windirection homeweatherstation css July 15th 2016  cleaned with http://www.cleancss.com/css-beautify/*/
+.windirection {
+    margin: 10px 0 0 85px;
+    width: 100%;
+}
 .homeweathercompass {
     position: absolute;
     width: 175px;
@@ -37,36 +41,21 @@ include_once('livedata.php');?>
     top: 25px;
     bottom: 25px;
     margin: auto;
-    border-radius: 100%;
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
     -o-border-radius: 100%;
     -ms-border-radius: 100%;
-    border-left: 8px solid rgba(95, 96, 97, .5);
-    border-top: 8px solid rgba(95, 96, 97, 0.8);
-    border-right: 8px solid rgba(95, 96, 97, .5);
-    border-bottom: 8px solid rgba(95, 96, 97, 0.8);
-    clip-path: polygon(100% 0, 100% 100%, 100% 100%, 0 100%, 0 0);
+    border-radius: 100%;
+    border-left: 8px solid rgba(95, 96, 97,0.5);
+    border-top: 8px solid rgba(95, 96, 97,0.8);
+    border-right: 8px solid rgba(95, 96, 97,0.5);
+    border-bottom: 8px solid rgba(95, 96, 97,0.8);
     -webkit-clip-path: polygon(100% 0, 100% 100%, 100% 100%, 0 100%, 0 0);
     -moz-clip-path: polygon(100% 0, 100% 100%, 100% 100%, 0 100%, 0 0);
     -o-clip-path: polygon(100% 0, 100% 100%, 100% 100%, 0 100%, 0 0);
     -ms-clip-path: polygon(100% 0, 100% 100%, 100% 100%, 0 100%, 0 0);
 }
-.homeweathercompass > .homeweathercompass-line:before {
-    content: "";
-    position: absolute;
-    left: 4px;
-    right: 4px;
-    top: 4px;
-    bottom: 4px;
-    margin: auto;
-    border-radius: 100%;
-    -webkit-border-radius: 100%;
-    -moz-border-radius: 100%;
-    -o-border-radius: 100%;
-    -ms-border-radius: 100%;
-    background-color: none;
-}
+
 .thearrow {
     position: absolute;
     z-index: 200;
@@ -75,11 +64,11 @@ include_once('livedata.php');?>
     margin-left: -5px;
     width: 10px;
     height: 50%;
-    transform-origin: 50% 100%;
     -webkit-transform-origin: 50% 100%;
     -moz-transform-origin: 50% 100%;
     -o-transform-origin: 50% 100%;
     -ms-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
 }
 .thearrow:after {
     content: '';
@@ -89,16 +78,17 @@ include_once('livedata.php');?>
     height: 15px;
     width: 15px;
     background-color: #f26c4f;
-    border-radius: 100%;
+    
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
     -o-border-radius: 100%;
     -ms-border-radius: 100%;
-    transform: translate(-50%, -50%);
+    border-radius: 100%;
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
 .thearrow:before {
     content: '';
@@ -109,11 +99,11 @@ include_once('livedata.php');?>
     left: 2px;
     top: -3px;
     border: 2px solid #fff;
-    border-radius: 100%;
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
     -o-border-radius: 100%;
     -ms-border-radius: 100%;
+    border-radius: 100%;
 }
 .homeweathercompass > .windirectiontext {
     display: block;
@@ -123,7 +113,6 @@ include_once('livedata.php');?>
     color:#ccc;
     font-family: "Helvetica", Arial, "Lucida Grande", sans-serif;
     font-weight: 600;
-   
     line-height: 12px;
     font-size: 12px;
     z-index: 10;  
@@ -134,25 +123,27 @@ include_once('livedata.php');?>
 }
 @keyframes rotate {
     0% {
-        transform: rotate(<?php echo $wind_degrees -12;?>deg);
         -webkit-transform: rotate(<?php echo $wind_degrees -12;?>deg);
         -moz-transform: rotate(<?php echo $wind_degrees -12;?>deg);
         -o-transform: rotate(<?php echo $wind_degrees -12;?>deg);
         -ms-transform: rotate(<?php echo $wind_degrees -12;?>deg);
+        transform: rotate(<?php echo $wind_degrees -12;?>deg);
     }
     50% {
-        transform: rotate(<?php echo $wind_degrees -5;?>deg);
         -webkit-transform: rotate(<?php echo $wind_degrees -5;?>deg);
         -moz-transform: rotate(<?php echo $wind_degrees -5;?>deg);
         -o-transform: rotate(<?php echo $wind_degrees -5;?>deg);
         -ms-transform: rotate(<?php echo $wind_degrees -5;?>deg);
+        transform: rotate(<?php echo $wind_degrees -5;?>deg);
+        
     }
     to {
-        transform: rotate(<?php echo $wind_degrees;?>deg);
         -webkit-transform: rotate(<?php echo $wind_degrees;?>deg);
         -moz-transform: rotate(<?php echo $wind_degrees;?>deg);
         -o-transform: rotate(<?php echo $wind_degrees;?>deg);
         -ms-transform: rotate(<?php echo $wind_degrees;?>deg);
+        transform: rotate(<?php echo $wind_degrees;?>deg);
+        
     }
 }
 .thearrow {

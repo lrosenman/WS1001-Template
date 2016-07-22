@@ -80,7 +80,7 @@ $colorpickerFontVal = "#000000";
 $CustomBgTheme = 'transparent';
 $colorpickerBgVal = "#ffffff";
 $baroMinMax = false;
-$templateinfo    = ''; // template information page
-$templateversion = 'Version 4.35F Fine Offset Hardware';
+$templateinfo    = 'https://github.com/lrosenman/WS1001-Template'; // template information page
+$templateversion = 'Version 4.36F';
 ?>
 

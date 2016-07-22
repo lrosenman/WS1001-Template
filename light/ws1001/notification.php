@@ -1,5 +1,4 @@
-<?php
-include_once('livedata.php');?>
+<?php include('livedata.php');?>
 <div class="updatedtimealert"><span>Updated</span> <?php 
  echo $update;
 ?> </div>
@@ -48,17 +47,17 @@ $sum_total = number_format($temp_c - $trendTemp,2);
   
   //temp rate increase per 10 minutes 
   else if ($sum_total>0.5){echo  "<div class='homeweathernotify'>   
-  <br><span style='font-size:1.2em;color:#f26c4f;'> 
+  <br><span style='font-size:0.7em;color:#f26c4f;'> 
   <hv>+$sum_total&deg</hv></span> 
-  <description>last 10 minutes <warmer>temperature</warmer><br>has rapidy risen <i class='fa fa-exclamation-triangle' aria-hidden='true'></i></description>
+  <description>last 15 minutes <warmer>temperature</warmer><br>has rapidy risen <i class='fa fa-exclamation-triangle' aria-hidden='true'></i></description>
   "
   ;}
   
   //temp rate decrease per 10 minutes 
   else if ($sum_total<-0.5){echo  "<div class='homeweathernotify'>  <br> 
-  <span style='font-size:1.2em;color:#66a1ba;'> 
+  <span style='font-size:0.7em;color:#66a1ba;'> 
   <hvcold>$sum_total&deg</hvcold></span>
-  <description>last 10 minutes <colder>temperature</colder><br>has rapidy fallen <i class='fa fa-exclamation-triangle' aria-hidden='true'></i></description>
+  <description>last 15 minutes <colder>temperature</colder><br>has rapidy fallen <i class='fa fa-exclamation-triangle' aria-hidden='true'></i></description>
   "
   ;}
   

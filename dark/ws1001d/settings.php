@@ -5,7 +5,7 @@
 $TZ= 'Europe/Istanbul'; // important set your time zone America/New_York for example go here to find your http://php.net/manual/en/timezones.php
 $TZconf = 'Europe/Istanbul';  // Your timezone for charts data 
 $UTC = '3';  // NUMBER of hours betweeen your location and UTC ,EXAMPLE new york -4 london 0 istanbul 3 
-$api= 'xxxxxxx'; // important Weather Underground api key developer key '1234567890'
+$api= 'xxxxxx'; // important Weather Underground api key developer key '1234567890'
 $stationName = 'Sinanoba Istanbul'; // This can be also changed for each language in translation files.
 $stationlocation = 'Istanbul'; // add your relative location city,town,village,district, or region 
 $WUID = 'ISTANBUL161'; // YOUR Weather Underground station ID this is used for charts
@@ -22,15 +22,12 @@ $windmu = 'km/h'; // 'm/s' or 'km/h or mph' for units selection
 $windunit = 'KM/H'; // template wind unit KM/H,MPH,M/S
 $rainunit = 'mm'; // template rain unit mm or in
 $pressureunit = 'hPa'; // template pressure unit hph or inHg
-$indoorlocation ='Salon'; // location of indoor unit i.e salon,kitchen,shed,cabin,office,bedroom...
 $livedata           = 'ws1001.json'; // path to raw data
 $version            = 'Realtime'; // type of source// 
 $hardware           = 'Fine Offset (HP2000)'; // hardware type i.e Davis VP2,Ambient,Accurite,Fine Offset,Aercus etc// 
-$email              = 'something@com'; // contact email for form
+$email              = 'something@.com'; // contact email for form
 $twitter            = 'istanbul161'; // twitter username used on form if available
-$weatherunderground = "https://www.wunderground.com/personal-weather-station/dashboard?ID=XXXXXX" ; // add your weatherunderground station url https://www.wunderground.com/personal-weather-station/dashboard?ID=ISTANBUL161 
-//no need to edit anything below unless you get really big spikes in your WU recorded data that need adjusting///
-
+$weatherunderground = "https://www.wunderground.com/personal-weather-station/dashboard?ID=XXXXXXX" ; // add your weatherunderground station url https://www.wunderground.com/personal-weather-station/dashboard?ID=ISTANBUL161 
 // please note there is no requirement to edit below this line unless you really know what your doing //
 $sinceY = '2016'; 
 $sinceM = '1'; // month without leading zero
@@ -82,8 +79,8 @@ $colorpickerFontVal = "#000000";
 $CustomBgTheme = 'transparent';
 $colorpickerBgVal = "#ffffff";
 $baroMinMax = false;
-$templateinfo    = ''; // template information page
-$templateversion = 'Version 4.35D ';
-
+$templateinfo    = 'https://github.com/lrosenman/WS1001-Template'; // template information page
+$templateversion = 'Version 4.36';
 ?>
+
 

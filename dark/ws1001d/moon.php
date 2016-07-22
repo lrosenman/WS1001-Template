@@ -1,6 +1,5 @@
 <?php //homeweatherstation sun & moon information kind of a unique approach 12th July July 2016// ?>
 <?php include_once('livedata.php');?>
-
 <link href="css/main.min.css" rel="stylesheet prefetch" type="text/css">
 <link href="font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet prefetch" type="text/css">
 <style>
@@ -161,7 +160,7 @@ else echo "${hours1}hrs ${minutes1} mins<br>till Sunset ";
 <div class="sundown"> 
  <img src="img/sundown.png" width="35" height="35" alt="homeweatherstation sunset"/></div> 
 </div>
-<div style="margin-top:-25px;postion:absolute;float:right;margin-right:150px;">
+<div style="margin-top:-25px;">
 <Script Language='Javascript'>document.write(unescape('%3C%61%20%68%72%65%66%3D%22%68%74%74%70%3A%2F%2F%77%65%61%74%68%65%72%2D%64%69%73%70%6C%61%79%2E%63%6F%6D%22%20%74%61%72%67%65%74%3D%22%5F%62%6C%61%6E%6B%22%3E%20%3C%69%6D%67%20%73%72%63%3D%22%69%6D%67%2F%73%6D%61%6C%6C%6C%6F%67%6F%2E%70%6E%67%22%20%3E%3C%2F%61%3E'));</Script></div>
  <script src='js/angular.js'></script>
  <script src='js/d3.js'></script>
