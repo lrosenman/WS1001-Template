@@ -27,8 +27,8 @@ $date = date_create();
 $json = file_get_contents('http://api.wunderground.com/api/'.$api.'/conditions_v11/q/pws:'.$id.'.json');
 $data = json_encode($json);
 $file = '../jsondata/weather.json';
-if ( json.length == 0 ) {
-        console.log("OFFLINE!");}
+//if ( json.length == 0 ) {
+//       console.log("OFFLINE!");}
 file_put_contents($file, $json);
 
 ?>
