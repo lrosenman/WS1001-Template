@@ -6,7 +6,7 @@ echo $wunderground;
 	error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED);
     ini_set(“display_errors”,”off”);
 	// extras added march June 2016 ws1001 clones //
-date_default_timezone_set('Europe/Istanbul');
+date_default_timezone_set('America/Chicago');
 $date = date_create();
 $data = array(
      
@@ -59,7 +59,22 @@ $rh=$data["outsideHumidity"];
 // realfeel
 $data["realfeel"] = round((0.5 * ($t + 61.0 + (($t -68.0) * 1.2) +  ($rh *0.094))),1);
 // heat index
-$data["heatindex"]= round((-42.379 + 2.04901523 * $t + 10.1433127*$rh - .22475441*$t*$rh - .00683783 *$t * $t - .05481717 * $rh * $rh + .00122874*$t*$t*$rh + .00085282 *$t * $rh *$rh - .00000199 *$t *$t *$rh * $rh),1);
+$data["heatindex"]= round((-42.379 + 2.04901523 * $t + 10.1433127*$rh - 
+                    .22475441*$t*$rh - .00683783 *$t * $t - .05481717 * $rh * $rh + 
+                    .00122874*$t*$t*$rh + .00085282 *$t * $rh *$rh - .00000199 *$t *$t *
+                    $rh * $rh),1);
+//LER: Heat Index Adjustment per http://www.wpc.ncep.noaa.gov/html/heatindex_equation.shtml
+$a = 0;
+if ($rh < 13 && ($t >= 82 && $t <= 112)) {
+    $a=((13 - $rh ) / 4) * sqrt((17-abs($t -95))/17);
+    $a = -$a;
+};
+if ($rh >85 && ($t >= 82 && $t <=87)) {
+    $a=(($rh - 85)/10) * ((87 - $t) / 5);
+};
+$data["heatindex"] += $a;
+$data["heatindex"] = round($data["heatindex"],1);
+$data["heatindex_adj"] = $a;
 
 //start the indoor real feel
 $it=$data["indoorTemp"];
@@ -72,4 +87,39 @@ $json = json_encode($data);
 
 $file = 'ws1001.json';
 file_put_contents($file, $json);
+// LER: DB
+$data["absbarometer"] ="Null";
+$dbconn = pg_connect("dbname=weather user=ler");
+$escaped_query=pg_escape_literal($_SERVER['QUERY_STRING']);
+pg_query("INSERT INTO raw_query(date_sub,data) values(now(), {$escaped_query})");
+$fieldlist='outsidetemp,outsidehumidity,humiditytrend,dewpoint,dewpointtrend';
+$fieldlist=$fieldlist . ',windchill,heatindex,winddir,windspeed,';
+$fieldlist=$fieldlist . 'windgust,rainrate,raintoday,rainweek,rainmonth,rainyear,';
+$fieldlist=$fieldlist . 'radiation,uv,indoortemp,indoorhumidity,barometer,';
+$fieldlist=$fieldlist . 'indoortrendtemp,trendtemp,windtrend,windgusttrend,';
+$fieldlist=$fieldlist . 'trendbarometer,solartrend,softwaretype,rtfreq,';
+$fieldlist=$fieldlist . 'timeutc,realfeel,heatindex_adj,uvtrend,indoortrendhumidity';
+$fieldlist=$fieldlist . ',indoorfeel';
+$valuelist=$data["outsideTemp"] . ',' . $data["outsideHumidity"] . ',';
+$valuelist=$valuelist . $data["humiditytrend"] . ',' . $data["dewpoint"] . ',';
+$valuelist=$valuelist . $data["dewpointtrend"] . ',' . $data["windchill"] . ',';
+$valuelist=$valuelist . $data["heatindex"] . ',' ;
+$valuelist=$valuelist . $data["windDir"] . ',' . $data["windSpeed"] . ',';
+$valuelist=$valuelist . $data["windGust"] . ',' . $data["rainrate"] . ',';
+$valuelist=$valuelist . $data["raintoday"] . ',' . $data["rainweek"] . ',';
+$valuelist=$valuelist . $data["rainmonth"] . ',' . $data["rainyear"] . ',';
+$valuelist=$valuelist . $data["radiation"] . ',' . $data["UV"] . ',';
+$valuelist=$valuelist . $data["indoorTemp"] . ',' . $data["indoorHumidity"] . ',';
+$valuelist=$valuelist . $data["barometer"] . ','; 
+$valuelist=$valuelist . $data["indoortrendTemp"] . ',' . $data["trendTemp"] . ',';
+$valuelist=$valuelist . $data["windtrend"] . ',' . $data["windgusttrend"] . ',';
+$valuelist=$valuelist . $data["trendbarometer"] . ',' . $data["solartrend"] . ',';
+$valuelist=$valuelist . pg_escape_literal($data["softwaretype"]) . ',' . $data["rtfreq"] . ',';
+$valuelist=$valuelist . pg_escape_literal($data["timeutc"] . "-0") . ',' . $data["realfeel"] . ',';
+$valuelist=$valuelist . $data["heatindex_adj"] . ',' . $data["UVtrend"] . ',' . $data["indoortrendHumidity"] . ',';
+$valuelist=$valuelist . $data["indoorfeel"];
+$pg_query="INSERT INTO observations(" . $fieldlist . ") VALUES(" . $valuelist .");";
+//error_log($pg_query);
+pg_query($dbconn,$pg_query);
+pg_close($dbconn);
 ?>
