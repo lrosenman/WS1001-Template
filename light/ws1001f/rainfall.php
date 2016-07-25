@@ -137,8 +137,8 @@ width:100%;color:#676e73;font-family:"Helvetica", Arial;font-size:0.8em}
    
    <div id="container1"> <div id="beaker">
     <div class="rainvalue"><?php echo "${raintoday} <span>${rainunit}</span>\n" ; 
-	if ($raintoday <0.1){echo '<div class=\'norain fade-in norain\'></div>';}
-	if ($raintoday >0.1){echo '<div class=\'raintext1\'>measured <span>today</div>';}
+	if ($raintoday <0.01){echo '<div class=\'norain fade-in norain\'></div>';}
+	if ($raintoday >0.01){echo '<div class=\'raintext1\'>measured <span>today</div>';}
 	?></div>    
    </div><div id="raintoday"></div></div>  
   
